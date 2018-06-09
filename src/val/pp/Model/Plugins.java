@@ -14,6 +14,7 @@ public class Plugins {
     private StringProperty datePlugin = new SimpleStringProperty();
     private BooleanProperty enabledByDefault = new SimpleBooleanProperty();
     private StringProperty requirements = new SimpleStringProperty();
+    private StringProperty todo = new SimpleStringProperty();
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea) {
         this.name.setValue(name);
@@ -24,7 +25,7 @@ public class Plugins {
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea,
                    boolean enabledByDefault, String requirements) {
-        this(name,description,ideaAuthor,dateIdea);
+        this(name, description, ideaAuthor, dateIdea);
         this.enabledByDefault.setValue(enabledByDefault);
         this.requirements.setValue(requirements);
     }
@@ -32,81 +33,93 @@ public class Plugins {
     public Plugins(String name, String description, String ideaAuthor, String dateIdea,
                    boolean enabledByDefault, String requirements,
                    String pluginAuthor, String datePlugin) {
-        this(name,description,ideaAuthor,dateIdea,enabledByDefault,requirements);
+        this(name, description, ideaAuthor, dateIdea, enabledByDefault, requirements);
         this.pluginAuthor.setValue(pluginAuthor);
         this.datePlugin.setValue(datePlugin);
+    }
+
+    public String getTodo() {
+        return todo.get();
+    }
+
+    public void setTodo(String todo) {
+        this.todo.set(todo);
+    }
+
+    public StringProperty todoProperty() {
+        return todo;
     }
 
     public String getName() {
         return name.get();
     }
 
-    public StringProperty nameProperty() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name.set(name);
+    }
+
+    public StringProperty nameProperty() {
+        return name;
     }
 
     public String getDescription() {
         return description.get();
     }
 
-    public StringProperty descriptionProperty() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description.set(description);
+    }
+
+    public StringProperty descriptionProperty() {
+        return description;
     }
 
     public String getPluginAuthor() {
         return pluginAuthor.get();
     }
 
-    public StringProperty pluginAuthorProperty() {
-        return pluginAuthor;
-    }
-
     public void setPluginAuthor(String pluginAuthor) {
         this.pluginAuthor.set(pluginAuthor);
+    }
+
+    public StringProperty pluginAuthorProperty() {
+        return pluginAuthor;
     }
 
     public String getDatePlugin() {
         return datePlugin.get();
     }
 
-    public StringProperty datePluginProperty() {
-        return datePlugin;
-    }
-
     public void setDatePlugin(String datePlugin) {
         this.datePlugin.set(datePlugin);
+    }
+
+    public StringProperty datePluginProperty() {
+        return datePlugin;
     }
 
     public boolean isEnabledByDefault() {
         return enabledByDefault.get();
     }
 
-    public BooleanProperty enabledByDefaultProperty() {
-        return enabledByDefault;
-    }
-
     public void setEnabledByDefault(boolean enabledByDefault) {
         this.enabledByDefault.set(enabledByDefault);
+    }
+
+    public BooleanProperty enabledByDefaultProperty() {
+        return enabledByDefault;
     }
 
     public String getRequirements() {
         return requirements.get();
     }
 
-    public StringProperty requirementsProperty() {
-        return requirements;
-    }
-
     public void setRequirements(String requirements) {
         this.requirements.set(requirements);
+    }
+
+    public StringProperty requirementsProperty() {
+        return requirements;
     }
 
     public String getIdeaAuthor() {

@@ -6,31 +6,32 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import val.pp.Main;
+import val.pp.Model.Plugins;
 import val.pp.Model.Project;
-import val.pp.Model.valBox;
+import val.pp.Model.ccBoxList.valBox;
+import val.pp.Model.ccBoxList.valPane;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
     //CONTROLS
     public ListView<Project> listPlugins;
     public TextArea txtArea;
-    public Pane paneRight;
-    public Pane paneLeft;
+    public ListView<Plugins> listReleased;
+    public ListView<Plugins> listFixes;
+    public ListView<Plugins> listDev;
+    public ListView<Plugins> listQue;
+    public ListView<Plugins> listFeas;
+    public ListView<Plugins> listPurpose;
+    public ListView<Plugins> listIdeaA;
+    public ListView<Plugins> listIdeaP;
     private ArrayList<Project> arrProjects = new ArrayList<>();
     private ObservableList<Project> obsProjects = FXCollections.observableArrayList(arrProjects);
 
@@ -73,34 +74,20 @@ public class MainController implements Initializable {
 
     private void TEST() {
         //SAMPLES
-        String desc = "Lorus Ispum sup sup. Soek jy n broodjie?";
+        /*String desc = "Lorus Ispum sup sup. Soek jy n broodjie?";
         Project numOne = new Project("TEST", desc + "1");
         Project numTwo = new Project("IS IT?", desc + "2");
         Project numThree = new Project("BLEH", desc + "3");
-        obsProjects.addAll(numOne, numTwo, numThree);
+        obsProjects.addAll(numOne, numTwo, numThree);*/
 
-        valBox numbaOee = new valBox(20,20,"AWE");
-        paneLeft.setBorder(new Border( new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        paneLeft.getChildren().add(numbaOee);
-
-        try {
-            Method meth = null;
-            Method[] methods = Math.class.getMethods();
-            for (Method cur: methods){
-                System.out.println(cur.getName());
-                if (cur.getName().equals("pow"))
-                    meth = cur;
-            }
-            meth.setAccessible(true);
-            double ans = (double) meth.invoke(null,2,3);
-            System.out.println(ans);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
+       /* valBox numbaOee = new valBox(20, 20, "AWE");
+        valBox qwe = new valBox(20, 50, "AWE");
+        valBox numdgsbaOee = new valBox(20, 70, "AWE");
+        valBox numfhbaOee = new valBox(20, 100, "AWE");
+        paneLeft.getChildren().addAll(numbaOee, qwe, numdgsbaOee, numfhbaOee);*/
 
 
+       // valPane vp = new valPane(paneLeft);
     }
 
     public void addPlugin(ActionEvent actionEvent) {

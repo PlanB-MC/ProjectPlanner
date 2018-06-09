@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import val.pp.controller.MainController;
+import val.pp.controller.dbController;
 
 public class Main extends Application {
     public static Stage primaryStage;
@@ -18,6 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        dbController dbConn = new dbController("","");
         Parent screen_HomeScreen = FXMLLoader.load(getClass().getResource("views/MainScreen.fxml"));
         this.primaryStage = primaryStage;
         primaryStage.setScene(new Scene(screen_HomeScreen));
@@ -29,7 +32,7 @@ public class Main extends Application {
        // Parent screen_PluginInfo = FXMLLoader.load(getClass().getResource("views/PluginScreen.fxml"));
        // Stage sgLogin = initStageQuick(primaryStage,screen_Login, "Login");
        // Stage sgPInfo = initStageQuick(primaryStage,screen_Login, "Plugin Information");
-
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
