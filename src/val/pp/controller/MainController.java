@@ -544,7 +544,7 @@ public class MainController implements Initializable {
                             "pDesc = '" + desc + "'," +
                             "pServer = '" + server + "'," +
                             "pOwner = '" + owner + "' " +
-                            "WHERE pId = "+curProj.getID()+"";
+                            "WHERE pId = " + curProj.getID() + "";
                     dbController.execute(sql);
                     curProj.setName(name);
                     curProj.setDesc(desc);
@@ -563,7 +563,23 @@ public class MainController implements Initializable {
     }
 
     public void setBtnDelProj(ActionEvent actionEvent) {
-
+        Project curProj = listProjects.getSelectionModel().getSelectedItem();
+        if (listProjects.getItems().size() <= 1){
+            //TODO: ERROR HANDLING
+            return;
+        }
+        int index = listProjects.getSelectionModel().getSelectedIndex();
+        index = index > 0 ? 0 : 1;
+        String sql = "";
+        try {
+            sql = "DELETE FROM Projects WHERE pId = " + listProjects.getSelectionModel().getSelectedItem().getID() + "";
+            dbController.execute(sql);
+            listProjects.getSelectionModel().select(index);
+            listProjects.getItems().remove(curProj);
+            dbController.closeDB();
+        } catch (SQLException e) {
+            System.out.println("unable to do sql for: " + sql);
+        }
     }
 
     public void setBtnAddIdea(ActionEvent actionEvent) {
