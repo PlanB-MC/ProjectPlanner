@@ -439,7 +439,6 @@ public class MainController implements Initializable {
 
     public void setBtnAddPlugin(ActionEvent actionEvent) {
         try {
-            //TODO: move to MAIN. avoid extra imports
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/ProjectScreen.fxml"));
             Parent newScreen = loader.load();
             PluginEditorController pec = loader.getController();
@@ -491,8 +490,6 @@ public class MainController implements Initializable {
 
     public void setBtnAddProj(ActionEvent actionEvent) {
         try {
-
-            //TODO: move to MAIN. avoid extra imports
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/ProjectScreen.fxml"));
             Parent newScreen = loader.load();
             ProjectEditerController pec = loader.getController();
@@ -525,7 +522,44 @@ public class MainController implements Initializable {
     }
 
     public void setBtnEditProj(ActionEvent actionEvent) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/ProjectScreen.fxml"));
+            Parent newScreen = loader.load();
+            ProjectEditerController pec = loader.getController();
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Project Information");
+            Project curProj = listProjects.getSelectionModel().getSelectedItem();
+            pec.tfName.setText(curProj.getName());
+            pec.tfOwner.setText(curProj.getpOwner());
+            pec.tfServer.setText(curProj.getpServer());
+            pec.taDesc.setText(curProj.getDesc());
+            EventHandler<ActionEvent> event = event1 -> {
+                String name = pec.tfName.getText();
+                String owner = pec.tfOwner.getText();
+                String server = pec.tfServer.getText();
+                String desc = pec.taDesc.getText();
+                String sql = "";
+                try {
+                    sql = "UPDATE Projects SET " +
+                            "pName = '" + name + "'," +
+                            "pDesc = '" + desc + "'," +
+                            "pServer = '" + server + "'," +
+                            "pOwner = '" + owner + "' " +
+                            "WHERE pId = "+curProj.getID()+"";
+                    dbController.execute(sql);
+                    curProj.setName(name);
+                    curProj.setDesc(desc);
+                    curProj.setpOwner(owner);
+                    curProj.setpOwner(server);
+                    dbController.closeDB();
+                } catch (SQLException e) {
+                    System.out.println("unable to do sql for: " + sql);
+                }
+            };
+            pec.fireEvnt = event;
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setBtnDelProj(ActionEvent actionEvent) {

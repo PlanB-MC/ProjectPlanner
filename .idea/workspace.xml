@@ -6,35 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="Main screen is fairly done.">
-      <change afterPath="$PROJECT_DIR$/src/val/pp/Model/Ideas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/preload/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/preload/ppSplash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/resources/PlanB_Splash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectPlanner_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" afterDir="false" />
+    <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Ideas.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/ProjectEditerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/preload/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/preload/ppSplash.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/resources/PlanB_Splash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/ProjectScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectPlanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectPlanner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Plugins.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Plugins.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/PluginEditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/PluginEditorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/dbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/dbController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/PluginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/PluginScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/controller/dbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/dbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,13 +66,6 @@
         <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="Plugins: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="ProjectIdea: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
       <path>
@@ -123,25 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/val/pp/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="445" column="64" selection-start-line="445" selection-start-column="52" selection-end-line="445" selection-end-column="64" />
+            <state relative-caret-position="513">
+              <caret line="552" column="43" lean-forward="true" selection-start-line="552" selection-start-column="43" selection-end-line="552" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#changeTXTinfo#0;class#MainController#0" />
@@ -150,8 +110,30 @@
                 <element signature="method#refreshProjectList#0;class#MainController#0" />
                 <element signature="method#refreshPluginList#0;class#MainController#0" />
                 <element signature="method#TEST#0;class#MainController#0" />
+                <element signature="method#initLoadFromDB#0;class#MainController#0" />
                 <element signature="method#loadFromDB_PluginIdeas#0;class#MainController#0" />
+                <element signature="e#18087#20711#0" />
+                <element signature="e#20717#20787#0" />
+                <element signature="method#setBtnDelPlugin#0;class#MainController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projects" pinned="false" current-in-tab="false">
+        <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Projects">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console_5.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_5.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="83" lean-forward="true" selection-start-column="83" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -248,10 +230,11 @@
         <option value="$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/ppEvents.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/preload/ppSplash.java" />
         <option value="$PROJECT_DIR$/src/val/pp/preload/App.java" />
         <option value="$PROJECT_DIR$/src/val/pp/Main.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_5.sql" />
+        <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -353,7 +336,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Azure (Microsoft)&#10;DDL Data Source&#10;MySQL" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -468,12 +451,20 @@
       <workItem from="1528527451154" duration="11790000" />
       <workItem from="1528540614768" duration="13162000" />
       <workItem from="1528562033492" duration="5382000" />
-      <workItem from="1528621552844" duration="34052000" />
+      <workItem from="1528621552844" duration="35296000" />
     </task>
+    <task id="LOCAL-00001" summary="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project">
+      <created>1528659651523</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528659651523</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104371000" />
+    <option name="totallyTimeSpent" value="105615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -489,13 +480,13 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="8" type="WINDOWED" weight="0.38779956" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="8" type="WINDOWED" visible="true" weight="0.38779956" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991708" visible="true" weight="0.1705757" />
-      <window_info anchor="right" id="Database" order="3" weight="0.21428572" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.21428572" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
       <window_info id="Structure" order="1" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -551,11 +542,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Main screen is fairly done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Main screen is fairly done." />
+    <MESSAGE value="Added Splash screen.&#10;possible to add new project" />
+    <MESSAGE value="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="44" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -592,13 +585,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/paint/Paint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-529">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/awe.xml" />
     <entry file="file://$PROJECT_DIR$/../../3rd YEAR/1 Semester/WRPV301/Tests/2016/awe.xml" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/reflect/Constructor.java">
@@ -934,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Projects">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -1000,10 +979,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Projects">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="83" lean-forward="true" selection-start-column="83" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="445" column="64" selection-start-line="445" selection-start-column="52" selection-end-line="445" selection-end-column="64" />
+        <state relative-caret-position="513">
+          <caret line="552" column="43" lean-forward="true" selection-start-line="552" selection-start-column="43" selection-end-line="552" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#changeTXTinfo#0;class#MainController#0" />
@@ -1012,19 +1017,11 @@
             <element signature="method#refreshProjectList#0;class#MainController#0" />
             <element signature="method#refreshPluginList#0;class#MainController#0" />
             <element signature="method#TEST#0;class#MainController#0" />
+            <element signature="method#initLoadFromDB#0;class#MainController#0" />
             <element signature="method#loadFromDB_PluginIdeas#0;class#MainController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#18087#20711#0" />
+            <element signature="e#20717#20787#0" />
+            <element signature="method#setBtnDelPlugin#0;class#MainController#0" />
           </folding>
         </state>
       </provider>

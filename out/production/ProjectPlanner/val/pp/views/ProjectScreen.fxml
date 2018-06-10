@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="val.pp.controller.ProjectEditerController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="100.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Project Name">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Label text="Project Owner" GridPane.rowIndex="2">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Label text="Target Server" GridPane.rowIndex="4">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Label text="Project Description" GridPane.columnIndex="1">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <TextArea fx:id="taDesc" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+      <TextField fx:id="tfName" GridPane.rowIndex="1" />
+      <TextField fx:id="tfOwner" GridPane.rowIndex="3" />
+      <TextField fx:id="tfServer" GridPane.rowIndex="5" />
+      <Button fx:id="btnSubmit" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnSubmit" text="Sumbit" GridPane.rowIndex="6" />
+      <Button fx:id="btnClear" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnClear" text="Clear" GridPane.rowIndex="7" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>
