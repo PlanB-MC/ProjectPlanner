@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar</output-path>
     <root id="archive" name="ProjectPlanner.jar">
       <element id="module-output" name="ProjectPlanner" />
+      <element id="extracted-dir" path="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -1408,13 +1408,13 @@
     <column id="347" parent="327" name="pEnabledByDefault">
       <Position>8</Position>
       <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="327" name="pRequirments">
+    <column id="348" parent="327" name="pRequirements">
       <Position>9</Position>
       <DataType>varchar(300)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="349" parent="327" name="pTODO">
       <Position>10</Position>
@@ -1431,6 +1431,8 @@
 4 - Fixing
 5 - Released</Comment>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="351" parent="327" name="Plugins_pId_uindex">

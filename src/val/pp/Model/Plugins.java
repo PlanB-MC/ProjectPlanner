@@ -1,11 +1,9 @@
 package val.pp.Model;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class Plugins {
+    private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty name = new SimpleStringProperty();
     private StringProperty description = new SimpleStringProperty();
     private StringProperty ideaAuthor = new SimpleStringProperty();
@@ -15,6 +13,7 @@ public class Plugins {
     private BooleanProperty enabledByDefault = new SimpleBooleanProperty();
     private StringProperty requirements = new SimpleStringProperty();
     private StringProperty todo = new SimpleStringProperty();
+    private IntegerProperty level = new SimpleIntegerProperty();
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea) {
         this.name.setValue(name);
@@ -31,11 +30,43 @@ public class Plugins {
     }
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea,
-                   boolean enabledByDefault, String requirements,
-                   String pluginAuthor, String datePlugin) {
+                   boolean enabledByDefault, String requirements, int id,
+                   String pluginAuthor, String datePlugin, int level) {
         this(name, description, ideaAuthor, dateIdea, enabledByDefault, requirements);
         this.pluginAuthor.setValue(pluginAuthor);
         this.datePlugin.setValue(datePlugin);
+        this.id.setValue(id);
+    }
+
+    public int getLevel() {
+        return level.get();
+    }
+
+    public void setLevel(int level) {
+
+        this.level.set(level);
+    }
+
+    public IntegerProperty levelProperty() {
+        return level;
+    }
+
+    @Override
+    public String toString() {
+        return name.getValue();
+    }
+
+    public int getId() {
+        return id.get();
+    }
+
+    public void setId(int id) {
+
+        this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getTodo() {
