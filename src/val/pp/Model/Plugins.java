@@ -42,6 +42,7 @@ public class Plugins {
                    String pluginAuthor, String datePlugin, int level) {
         this(name, description, ideaAuthor, dateIdea, enabledByDefault, requirements, pluginAuthor, datePlugin);
         this.id.setValue(id);
+        this.level.setValue(level);
     }
 
 

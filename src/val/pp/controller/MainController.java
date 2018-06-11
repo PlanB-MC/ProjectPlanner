@@ -61,15 +61,15 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initLoadFromDB();
         doBindings();
-        refreshPluginList();
         refreshProjectList();
+        refreshPluginList();
         populateChoicePlugins();
+        changeTXTinfo(null, listProjects.getSelectionModel().getSelectedItem());//Best solution i can find...
     }
 
     //<editor-fold desc="Bindings">
-
     private void doBindings() {
-        //Plugins
+        //<editor-fold desc="Plugins">
         listReleased.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) listReleased.getSelectionModel().select(-1);
         });
@@ -120,8 +120,9 @@ public class MainController implements Initializable {
         listQue.getSelectionModel().selectedIndexProperty();
         listFeas.getSelectionModel().selectedIndexProperty();
         listPurpose.getSelectionModel().selectedIndexProperty();
+        //</editor-fold>
 
-        //Ideas
+        //<editor-fold desc="Ideas">
         listIdeaA.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) listIdeaA.getSelectionModel().select(-1);
         });
@@ -140,9 +141,9 @@ public class MainController implements Initializable {
 
         listIdeaA.getSelectionModel().selectedIndexProperty();
         listIdeaP.getSelectionModel().selectedIndexProperty();
+        //</editor-fold>
 
-
-        //Projects
+        //<editor-fold desc="Projects">
         listProjects.getSelectionModel().selectedIndexProperty();
 
         listProjects.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -150,17 +151,25 @@ public class MainController implements Initializable {
             loadFromDB_PluginIdeas(listProjects.getSelectionModel().getSelectedItem().getID());
             populateChoicePlugins();
         });
+        //</editor-fold>
 
-        //update TextAreas
+        //<editor-fold desc="ChoiceBoxes">
+        choicePlugins.getSelectionModel().selectedIndexProperty();
+
+        choicePlugins.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> addPluginToProject(newValue)
+        );
+        //</editor-fold>
+
+        //<editor-fold desc="TextAreas">
         txtProjectInfo.textProperty().addListener((observable, oldValue, newValue) -> {
             refreshProjectList();
         });
 
         txtPluginInfo.textProperty().addListener((observable, oldValue, newValue) -> {
-            refreshProjectList();
+            refreshPluginList();
         });
-
-        listProjects.getSelectionModel().selectFirst();
+        //</editor-fold>
     }
 
     private void setCur(ListView listReleased) {
@@ -354,47 +363,14 @@ public class MainController implements Initializable {
                         pluginDate,
                         level
                 );
-                switch (level) {
-                    case 0: {
-                        obsListPurpose.add(newPlugin);
-                        break;
-                    }
-                    case 1: {
-                        obsListFeas.add(newPlugin);
-                        break;
-                    }
-                    case 2: {
-                        obsListQue.add(newPlugin);
-                        break;
-                    }
-                    case 3: {
-                        obsListDev.add(newPlugin);
-                        break;
-                    }
-                    case 4: {
-                        obsListFixes.add(newPlugin);
-                        break;
-                    }
-                    case 5: {
-                        obsListReleased.add(newPlugin);
-                        break;
-                    }
-                    /**
-                     * 0 - Suggested
-                     * 1 - Feasibility Check
-                     * 2 - Queued
-                     * 3 - Developing
-                     * 4 - Fixing
-                     * 5 - Released
-                     */
-                }
-                listPurpose.setItems(obsListPurpose);
-                listFeas.setItems(obsListFeas);
-                listQue.setItems(obsListQue);
-                listDev.setItems(obsListDev);
-                listFixes.setItems(obsListFixes);
-                listReleased.setItems(obsListReleased);
+                switch_Level_on_Plugin(level, newPlugin);
             }
+            listPurpose.setItems(obsListPurpose);
+            listFeas.setItems(obsListFeas);
+            listQue.setItems(obsListQue);
+            listDev.setItems(obsListDev);
+            listFixes.setItems(obsListFixes);
+            listReleased.setItems(obsListReleased);
         } catch (SQLException e) {
             System.out.println("unable to do sql for: " + sql);
             e.printStackTrace();
@@ -423,6 +399,43 @@ public class MainController implements Initializable {
             return;
         }
         dbController.closeDB();
+    }
+
+    private void switch_Level_on_Plugin(int level, Plugins plugin) {
+        switch (level) {
+            case 0: {
+                obsListPurpose.add(plugin);
+                break;
+            }
+            case 1: {
+                obsListFeas.add(plugin);
+                break;
+            }
+            case 2: {
+                obsListQue.add(plugin);
+                break;
+            }
+            case 3: {
+                obsListDev.add(plugin);
+                break;
+            }
+            case 4: {
+                obsListFixes.add(plugin);
+                break;
+            }
+            case 5: {
+                obsListReleased.add(plugin);
+                break;
+            }
+            /**
+             * 0 - Suggested
+             * 1 - Feasibility Check
+             * 2 - Queued
+             * 3 - Developing
+             * 4 - Fixing
+             * 5 - Released
+             */
+        }
     }
 
     private void populateChoicePlugins() {
@@ -467,6 +480,24 @@ public class MainController implements Initializable {
             return;
         }
     }
+
+    private void addPluginToProject(Plugins newValue) {
+        int curProjID = listProjects.getSelectionModel().getSelectedItem().getID();
+        msgDlgController.showError(
+                "Add to Plugin to Project",
+                "Are you sure you want to add " + newValue.getName() + "?",
+                event -> {
+                    String sql = "";
+                    try {
+                        sql = "INSERT INTO ProjectPlugins (pluginID, projectID) VALUES (" + newValue.getId() + "," + curProjID + ")";
+                        dbController.execute(sql);
+                        switch_Level_on_Plugin(newValue.getLevel(),newValue);
+                        dbController.closeDB();
+                    } catch (SQLException e) {
+                        System.out.println("unable to do sql for: " + sql);
+                    }
+                });
+    }
     //</editor-fold>
 
     //<editor-fold desc="Buttons onAction">
@@ -496,31 +527,31 @@ public class MainController implements Initializable {
                     actionEvent.consume();
                     return;
                 }
-                if (!req.equals("") || cbEnabled){
+                if (!req.equals("") || cbEnabled) {
                     state = 1;
                 }
-                if (!pluginAuth.equals("") || !pluginDate.equals("null")){
-                    if (pluginAuth.equals("") || pluginDate.equals("null")){
+                if (!pluginAuth.equals("") || !pluginDate.equals("null")) {
+                    if (pluginAuth.equals("") || pluginDate.equals("null")) {
                         msgDlgController.showError("Adding new Plugin Exception: Plugin Author information", "Illegal Empty fields");
                         actionEvent.consume();
                         return;
-                    }else state = 2;
+                    } else state = 2;
                 }
                 //</editor-fold>
                 String sql = "";
                 try {
-                    switch (state){
-                        case 0 :{
+                    switch (state) {
+                        case 0: {
                             sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pIdeaDate) VALUES " +
                                     "('" + name + "','" + desc + "','" + ideaAuth + "','" + ideaDate + "')";
                             break;
                         }
-                        case 1 :{
+                        case 1: {
                             sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pIdeaDate,pEnabledByDefault,pRequirements) VALUES " +
                                     "('" + name + "','" + desc + "','" + ideaAuth + "','" + ideaDate + "','" + cbEnabled + "','" + req + "')";
                             break;
                         }
-                        case 2 :{
+                        case 2: {
                             sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pPluginAuthor,pIdeaDate,pPluginDate,pEnabledByDefault,pRequirements) VALUES " +
                                     "('" + name + "','" + desc + "','" + ideaAuth + "','" + pluginAuth + "','" + ideaDate + "','" + pluginDate + "','" + cbEnabled + "','" + req + "')";
                             break;
