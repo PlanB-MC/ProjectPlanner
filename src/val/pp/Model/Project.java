@@ -19,14 +19,15 @@ public class Project {
         this.pOwner.setValue(pOwner);
     }
 
-    @Override
-    public String toString() {
-        return name.getValue();
-    }
-
     public Project(String name, String desc, String pServer, String pOwner, int ID) {
         this(name, desc, pServer, pOwner);
         this.ID.setValue(ID);
+    }
+
+    @Override
+    public String toString() {
+
+        return name.getValue();
     }
 
     public String getpServer() {
@@ -55,6 +56,10 @@ public class Project {
 
     public int getID() {
         return ID.get();
+    }
+
+    public void setID(int ID) {
+        this.ID.set(ID);
     }
 
     public IntegerProperty IDProperty() {

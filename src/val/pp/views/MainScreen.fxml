@@ -21,13 +21,20 @@
             <TextArea fx:id="txtProjectInfo" wrapText="true" />
             <VBox alignment="TOP_CENTER" prefHeight="200.0" spacing="5.0">
                 <children>
-                    <Button fx:id="btnAddProj" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddProj" prefHeight="35.0" text="Add Project" />
-                    <Button fx:id="btnEditProj" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnEditProj" prefHeight="35.0" text="Edit Project" />
-                    <Button fx:id="btnDelProj" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnDelProj" prefHeight="35.0" text="Delete Project" />
+                    <Button fx:id="btnAddProj" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddProj" text="Add Project" />
+                    <Button fx:id="btnEditProj" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnEditProj" text="Edit Project" />
+                    <Button fx:id="btnDelProj" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnDelProj" text="Delete Project" />
                     <Separator prefWidth="200.0" />
-                    <Button fx:id="btnAddIdea" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddIdea" prefHeight="30.0" text="Add Idea" />
-                    <Button fx:id="btnEditIdea" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnEditIdea" prefHeight="30.0" text="Edit Idea" />
+                    <Button fx:id="btnAddIdea" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddIdea" text="Add Idea" />
+                    <Button fx:id="btnEditIdea" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnEditIdea" text="Edit Idea" />
+               <Button fx:id="btnDelIdea" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnDelIdea" text="Delete Idea" />
                 </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets top="2.0" />
+            </padding>
             </VBox>
         </children>
         <padding>
@@ -95,15 +102,18 @@
             <Label text="Accepted Ideas" GridPane.rowIndex="1" GridPane.valignment="TOP" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
                 <children>
-                    <TextArea fx:id="txtPluginInfo" layoutX="5.0" layoutY="14.0" prefHeight="329.0" prefWidth="210.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-style: solid  line-cap round;" AnchorPane.bottomAnchor="168.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                    <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="354.0" maxWidth="1.7976931348623157E308" prefHeight="129.0" prefWidth="96.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <TextArea fx:id="txtPluginInfo" layoutX="5.0" layoutY="14.0" prefHeight="284.0" prefWidth="210.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-style: solid  line-cap round;" AnchorPane.bottomAnchor="213.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="354.0" maxWidth="1.7976931348623157E308" prefHeight="181.0" prefWidth="210.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="292.0">
                         <children>
-                            <Button fx:id="btnAddPlugin" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddPlugin" prefHeight="35.0" text="Add Plugin" />
+                            <Button fx:id="btnAddPlugin" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnAddPlugin" prefHeight="35.0" prefWidth="210.0" text="Add Plugin" />
                             <Button fx:id="btnEditPlugin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnEditPlugin" prefHeight="35.0" text="Edit Plugin" />
                             <Button fx:id="btnDelPlugin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnDelPlugin" prefHeight="35.0" text="Delete Plugin" />
                      <Separator prefWidth="200.0" />
                      <Label text="Add Existing Plugin" />
                      <ChoiceBox fx:id="choicePlugins" maxWidth="1.7976931348623157E308" />
+                     <Separator prefWidth="200.0" />
+                     <Label text="Add Existing Idea" />
+                     <ChoiceBox fx:id="choiceIdeas" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
                         </children>
                     </VBox>
                 </children>

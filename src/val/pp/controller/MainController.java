@@ -26,6 +26,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+//TODO: Any edit button: doesnt update the ListViews
 public class MainController implements Initializable {
     //CONTROLS
     public TextArea txtProjectInfo;
@@ -48,6 +49,7 @@ public class MainController implements Initializable {
     public Button btnEditPlugin;
     public Button btnDelPlugin;
     public ChoiceBox<Plugins> choicePlugins;
+    public ChoiceBox<Ideas> choiceIdeas;
     private Pair<Integer, ListView> curList = new Pair<>(-1, null);
     private ObservableList<Project> obsListProjects = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListReleased = FXCollections.observableArrayList(new ArrayList<>());
@@ -737,7 +739,7 @@ public class MainController implements Initializable {
             return;
         }
 
-        msgDlgController.showError("Deleting Plugin","Are you sure you want to delete "+curPlugin.getName()+"?",event -> {
+        msgDlgController.showError("Deleting Plugin", "Are you sure you want to delete " + curPlugin.getName() + "?", event -> {
             String sql = "";
             try {
                 sql = "DELETE FROM ProjectPlugins WHERE pluginID = " + curPlugin.getId() + "";
@@ -766,6 +768,13 @@ public class MainController implements Initializable {
                 String owner = pec.tfOwner.getText();
                 String server = pec.tfServer.getText();
                 String desc = pec.taDesc.getText();
+                //<editor-fold desc="ErrorCheck">
+                if (name.equals("") || owner.equals("") || server.equals("") || desc.equals("")) {
+                    msgDlgController.showError("Adding new Project Exception: Basic information", "Illegal Empty fields");
+                    actionEvent.consume();
+                    return;
+                }
+                //</editor-fold>
                 String sql = "";
                 try {
                     sql = "INSERT INTO Projects (pName,pDesc,pServer,pOwner) VALUES ('" + name + "','" + owner + "','" + server + "','" + desc + "')";
@@ -775,8 +784,10 @@ public class MainController implements Initializable {
                     ResultSet resultSet = dbController.executeQuery(sql);
                     resultSet.last();
                     int id = resultSet.getInt("pId");
+                    newProj.setID(id);
                     obsListProjects.add(newProj);
                     dbController.closeDB();
+                    pec.done = true;
                 } catch (SQLException e) {
                     System.out.println("unable to do sql for: " + sql);
                 }
@@ -804,6 +815,13 @@ public class MainController implements Initializable {
                 String owner = pec.tfOwner.getText();
                 String server = pec.tfServer.getText();
                 String desc = pec.taDesc.getText();
+                //<editor-fold desc="ErrorCheck">
+                if (name.equals("") || owner.equals("") || server.equals("") || desc.equals("")) {
+                    msgDlgController.showError("Adding new Project Exception: Basic information", "Illegal Empty fields");
+                    actionEvent.consume();
+                    return;
+                }
+                //</editor-fold>
                 String sql = "";
                 try {
                     sql = "UPDATE Projects SET " +
@@ -818,6 +836,7 @@ public class MainController implements Initializable {
                     curProj.setpOwner(owner);
                     curProj.setpOwner(server);
                     dbController.closeDB();
+                    pec.done = true;
                 } catch (SQLException e) {
                     System.out.println("unable to do sql for: " + sql);
                 }
@@ -856,14 +875,139 @@ public class MainController implements Initializable {
 
     //<editor-fold desc="Idea">
     public void setBtnAddIdea(ActionEvent actionEvent) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/IdeaScreen.fxml"));
+            Parent newScreen = loader.load();
+            IdeaController ic = loader.getController();
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Idea Information");
+            Project curProj = listProjects.getSelectionModel().getSelectedItem();
+            EventHandler<ActionEvent> event = event1 -> {
+                String name = ic.tfName.getText();
+                String desc = ic.taDesc.getText();
+                String ideaDate;
+                try {
+                    ideaDate = ic.datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e) {
+                    msgDlgController.showError("Adding Idea Exception: Dating problems", "You require a date.");
+                    actionEvent.consume();
+                    return;
+                }
+                String sql = "";
+                try {
+                    sql = "INSERT INTO Ideas (iDesc,iIdeaAuthor,iIdeaDate,iAccepted) " +
+                            "VALUES ('" + desc + "','" + name + "','" + ideaDate + "',0)";
+                    dbController.execute(sql);
+                    Ideas newIdea = new Ideas(desc, name, ideaDate);
+                    sql = "SELECT * FROM Ideas";
+                    ResultSet resultSet = dbController.executeQuery(sql);
+                    resultSet.last();
+                    int id = resultSet.getInt("iId");
+                    newIdea.setId(id);
+                    sql = "INSERT INTO ProjectIdea (projectID, ideaID) VALUES (" + curProj.getID() + "," + id + ")";
+                    dbController.execute(sql);
+                    obsListIdeaP.add(newIdea);
+                    ic.done = true;
+                    dbController.closeDB();
+                } catch (SQLException e) {
+                    System.out.println("unable to do sql for: " + sql);
+                }
+            };
+            ic.fireEvent = event;
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setBtnEditIdea(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/IdeaScreen.fxml"));
+            Parent newScreen = loader.load();
+            IdeaController ic = loader.getController();
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Idea Information");
+            Project curProj = listProjects.getSelectionModel().getSelectedItem();
+            Ideas curIdea;
+            try {
+                if (curList.getValue() == null) throw new NullPointerException();
+                curIdea = (Ideas) curList.getValue().getItems().get(curList.getKey());
+            } catch (ClassCastException e) {
+                msgDlgController.showError("Editing Idea Exception: No Idea!", "Please select an Idea :)");
+                return;
+            } catch (NullPointerException e) {
+                msgDlgController.showError("Editing Idea Exception: No Idea!", "Please select an Idea :)");
+                return;
+            }
+            ic.tfName.setText(curIdea.getAuthor());
+            ic.taDesc.setText(curIdea.getDesc());
+            ic.datePicker.setValue(LocalDate.parse(curIdea.getIdeaDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            EventHandler<ActionEvent> event = event1 -> {
+                String name = ic.tfName.getText();
+                String desc = ic.taDesc.getText();
+                String ideaDate;
+                try {
+                    ideaDate = ic.datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e) {
+                    msgDlgController.showError("Editing Idea Exception: Dating problems", "You require a date.");
+                    actionEvent.consume();
+                    return;
+                }
+                String sql = "";
+                try {
+                    sql = "UPDATE Ideas SET " +
+                            "iDesc = '" + desc + "', " +
+                            "iIdeaAuthor = '" + name + "', " +
+                            "iIdeaDate = '" + ideaDate + "', " +
+                            "iAccepted = " + curIdea.isAccepted() +
+                            " WHERE iId = " + curIdea.getId() + "";
+                    dbController.execute(sql);
+                    curIdea.setAuthor(name);
+                    curIdea.setDesc(desc);
+                    curIdea.setIdeaDate(ideaDate);
+                    ic.done = true;
+                    dbController.closeDB();
+                } catch (SQLException e) {
+                    System.out.println("unable to do sql for: " + sql);
+                }
+            };
+            ic.fireEvent = event;
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void setBtnDelIdea(ActionEvent actionEvent) {
+        Ideas curIdea;
+        ListView<Ideas> curListView;
+        int curProjId = listProjects.getSelectionModel().getSelectedItem().getID();
+        try {
+            curListView = curList.getValue();
+            if (curListView == null) throw new NullPointerException();
+            curIdea = curListView.getItems().get(curList.getKey());
+        } catch (ClassCastException e) {
+            msgDlgController.showError("Deleting Idea Exception: No Idea!", "Please select an Idea :)");
+            return;
+        } catch (NullPointerException e) {
+            msgDlgController.showError("Deleting Idea Exception: No Idea!", "Please select an Idea :)");
+            return;
+        }
+
+        msgDlgController.showError("Deleting Plugin", "Are you sure you want to delete: " + curIdea.getDesc(), event -> {
+            String sql = "";
+            try {
+                sql = "DELETE FROM ProjectIdea WHERE projectID = " + curProjId + " AND ideaID = " + curIdea.getId() + "";
+                dbController.execute(sql);
+                sql = "DELETE FROM Ideas WHERE iId = " + curIdea.getId() + "";
+                dbController.execute(sql);
+                curListView.getSelectionModel().select(-1);
+                curListView.getItems().remove(curIdea);
+                dbController.closeDB();
+            } catch (SQLException e) {
+                System.out.println("unable to do sql for: " + sql);
+            }
+        });
     }
     //</editor-fold>
 
     //</editor-fold>
-
 }

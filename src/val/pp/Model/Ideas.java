@@ -16,19 +16,23 @@ public class Ideas {
         this.accepted.setValue(false);
     }
 
+    public Ideas(int id, String desc, String author, String ideaDate, boolean accepted) {
+        this(desc, author, ideaDate);
+        this.accepted.setValue(accepted);
+        this.id.setValue(id);
+    }
+
     @Override
     public String toString() {
         return desc.getValue();
     }
 
-    public Ideas(int id, String desc, String author, String ideaDate, boolean accepted) {
-        this(desc,author,ideaDate);
-        this.accepted.setValue(accepted);
-        this.id.setValue(id);
-    }
-
     public int getId() {
         return id.get();
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
     }
 
     public IntegerProperty idProperty() {
@@ -75,11 +79,11 @@ public class Ideas {
         return accepted.get();
     }
 
-    public BooleanProperty acceptedProperty() {
-        return accepted;
-    }
-
     public void setAccepted(boolean accepted) {
         this.accepted.set(accepted);
+    }
+
+    public BooleanProperty acceptedProperty() {
+        return accepted;
     }
 }

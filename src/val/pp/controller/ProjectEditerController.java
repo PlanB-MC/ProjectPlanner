@@ -17,7 +17,9 @@ public class ProjectEditerController implements Initializable {
     public TextField tfOwner;
     public TextField tfServer;
     public TextArea taDesc;
+
     public EventHandler<ActionEvent> fireEvent;
+    public boolean done;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,8 +28,10 @@ public class ProjectEditerController implements Initializable {
 
     public void setBtnSubmit(ActionEvent actionEvent) {
         fireEvent.handle(actionEvent);
-        Stage stage = (Stage) btnSubmit.getScene().getWindow();
-        stage.close();
+        if (done) {
+            Stage stage = (Stage) btnSubmit.getScene().getWindow();
+            stage.close();
+        }
     }
 
     public void setBtnClear(ActionEvent actionEvent) {
