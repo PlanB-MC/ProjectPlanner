@@ -717,7 +717,40 @@ public class MainController implements Initializable {
     }
 
     public void setBtnDelPlugin(ActionEvent actionEvent) {
+        Plugins curPlugin;
+        int index;
+        ListView<Plugins> curListView;
+        try {
+            curListView = curList.getValue();
+            if (curListView == null) throw new NullPointerException();
+            curPlugin = curListView.getItems().get(curList.getKey());
+            if (curListView.getItems().size() <= 1) throw new IllegalAccessException();
+            index = curList.getKey() > 0 ? 0 : 1;
+        } catch (ClassCastException e) {
+            msgDlgController.showError("Deleting Plugin Exception: No Plugin!", "Please select a plugin :)");
+            return;
+        } catch (NullPointerException e) {
+            msgDlgController.showError("Deleting Plugin Exception: No Plugin!", "Please select a plugin :)");
+            return;
+        } catch (IllegalAccessException e) {
+            msgDlgController.showError("Deleting Plugin Exception: Not enough Plugins!", "Cannot Delete any more plugins.");
+            return;
+        }
 
+        msgDlgController.showError("Deleting Plugin","Are you sure you want to delete "+curPlugin.getName()+"?",event -> {
+            String sql = "";
+            try {
+                sql = "DELETE FROM ProjectPlugins WHERE pluginID = " + curPlugin.getId() + "";
+                dbController.execute(sql);
+                sql = "DELETE FROM Plugins WHERE pId = " + curPlugin.getId() + "";
+                dbController.execute(sql);
+                curListView.getSelectionModel().select(index);
+                curListView.getItems().remove(curPlugin);
+                dbController.closeDB();
+            } catch (SQLException e) {
+                System.out.println("unable to do sql for: " + sql);
+            }
+        });
     }
     //</editor-fold>
 
@@ -799,7 +832,7 @@ public class MainController implements Initializable {
     public void setBtnDelProj(ActionEvent actionEvent) {
         Project curProj = listProjects.getSelectionModel().getSelectedItem();
         if (listProjects.getItems().size() <= 1) {
-            //TODO: ERROR HANDLING
+            msgDlgController.showError("Deleting Project Exception: Not enough Projects!", "Cannot Delete any more Projects.");
             return;
         }
         int index = listProjects.getSelectionModel().getSelectedIndex();

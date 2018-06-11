@@ -42,7 +42,7 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/messageDialog.fxml"));
             Parent newScreen = loader.load();
             msgDlgController mdc = loader.getController();
-            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "ERROR");
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "NOTICE!");
             msgDlgController.thisCtrl = mdc;
             msgDlgController.stage = newStage;
         } catch (IOException e) {
