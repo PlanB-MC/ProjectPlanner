@@ -30,13 +30,21 @@ public class Plugins {
     }
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea,
-                   boolean enabledByDefault, String requirements, int id,
-                   String pluginAuthor, String datePlugin, int level) {
+                   boolean enabledByDefault, String requirements,
+                   String pluginAuthor, String datePlugin) {
         this(name, description, ideaAuthor, dateIdea, enabledByDefault, requirements);
         this.pluginAuthor.setValue(pluginAuthor);
         this.datePlugin.setValue(datePlugin);
+    }
+
+    public Plugins(String name, String description, String ideaAuthor, String dateIdea,
+                   boolean enabledByDefault, String requirements, int id,
+                   String pluginAuthor, String datePlugin, int level) {
+        this(name, description, ideaAuthor, dateIdea, enabledByDefault, requirements, pluginAuthor, datePlugin);
         this.id.setValue(id);
     }
+
+
 
     public int getLevel() {
         return level.get();

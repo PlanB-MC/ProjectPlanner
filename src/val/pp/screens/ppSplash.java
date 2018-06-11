@@ -1,4 +1,4 @@
-package val.pp.preload;
+package val.pp.screens;
 
 import javafx.application.Preloader;
 import javafx.scene.Scene;

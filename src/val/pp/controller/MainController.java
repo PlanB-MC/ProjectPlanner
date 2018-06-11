@@ -15,12 +15,11 @@ import javafx.stage.Stage;
 import val.pp.Model.Ideas;
 import val.pp.Model.Plugins;
 import val.pp.Model.Project;
-import val.pp.preload.App;
+import val.pp.screens.App;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -56,6 +55,7 @@ public class MainController implements Initializable {
     private ObservableList<Plugins> obsListPurpose = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Ideas> obsListIdeaA = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Ideas> obsListIdeaP = FXCollections.observableArrayList(new ArrayList<>());
+    private ObservableList<Plugins> obsListChoicePlugins = FXCollections.observableArrayList(new ArrayList<>());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,7 +63,7 @@ public class MainController implements Initializable {
         doBindings();
         refreshPluginList();
         refreshProjectList();
-
+        populateChoicePlugins();
     }
 
     //<editor-fold desc="Bindings">
@@ -148,6 +148,7 @@ public class MainController implements Initializable {
         listProjects.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             changeTXTinfo(oldValue, newValue);
             loadFromDB_PluginIdeas(listProjects.getSelectionModel().getSelectedItem().getID());
+            populateChoicePlugins();
         });
 
         //update TextAreas
@@ -330,17 +331,17 @@ public class MainController implements Initializable {
             sql = "SELECT * FROM Plugins, ProjectPlugins WHERE projectID = " + pId + " AND pId = pluginID";
             resultset = dbController.executeQuery(sql);
             while (resultset.next()) {
-                int id = Integer.parseInt(resultset.getString("pId"));
+                int id = resultset.getInt("pId");
                 String name = resultset.getString("pName");
                 String desc = resultset.getString("pDesc");
                 String ideaAuthor = resultset.getString("pIdeaAuthor");
                 String pluginAuthor = resultset.getString("pPluginAuthor");
                 String ideaDate = resultset.getString("pIdeaDate");
                 String pluginDate = resultset.getString("pPluginDate");
-                Boolean enabledByDefault = Integer.valueOf(resultset.getString("pEnabledByDefault")) == 1;
+                Boolean enabledByDefault = resultset.getBoolean("pEnabledByDefault");
                 String requirements = resultset.getString("pRequirements");
                 String todo = resultset.getString("pTODO");
-                int level = Integer.parseInt(resultset.getString("pLevel"));
+                int level = resultset.getInt("pLevel");
                 Plugins newPlugin = new Plugins(
                         name,
                         desc,
@@ -423,30 +424,108 @@ public class MainController implements Initializable {
         }
         dbController.closeDB();
     }
+
+    private void populateChoicePlugins() {
+        obsListChoicePlugins.clear();
+        String sql = "";
+        ResultSet resultset = null;
+        try {
+            //TODO: Come back to this.
+            sql = "SELECT * FROM Plugins WHERE pId NOT IN (SELECT pluginID FROM ProjectPlugins WHERE projectID = " +
+                    listProjects.getSelectionModel().getSelectedItem().getID() + ")";
+            resultset = dbController.executeQuery(sql);
+            while (resultset.next()) {
+                int id = resultset.getInt("pId");
+                String name = resultset.getString("pName");
+                String desc = resultset.getString("pDesc");
+                String ideaAuthor = resultset.getString("pIdeaAuthor");
+                String pluginAuthor = resultset.getString("pPluginAuthor");
+                String ideaDate = resultset.getString("pIdeaDate");
+                String pluginDate = resultset.getString("pPluginDate");
+                Boolean enabledByDefault = resultset.getBoolean("pEnabledByDefault");
+                String requirements = resultset.getString("pRequirements");
+                String todo = resultset.getString("pTODO");
+                int level = resultset.getInt("pLevel");
+                Plugins newPlugin = new Plugins(
+                        name,
+                        desc,
+                        ideaAuthor,
+                        ideaDate,
+                        enabledByDefault,
+                        requirements,
+                        id,
+                        pluginAuthor,
+                        pluginDate,
+                        level
+                );
+                obsListChoicePlugins.add(newPlugin);
+            }
+            choicePlugins.setItems(obsListChoicePlugins);
+        } catch (SQLException e) {
+            System.out.println("unable to do sql for: " + sql);
+            e.printStackTrace();
+            return;
+        }
+    }
     //</editor-fold>
 
     //<editor-fold desc="Buttons onAction">
+
+    //<editor-fold desc="Plugin">
     public void setBtnAddPlugin(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/PluginScreen.fxml"));
             Parent newScreen = loader.load();
             PluginEditorController pec = loader.getController();
             Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Plugin Information");
-            //pec.obsListProj.setAll(obsListProjects);
             Project selProject = listProjects.getSelectionModel().getSelectedItem();
-            newStage.onCloseRequestProperty().addListener((observable, oldValue, newValue) -> {
+            EventHandler<ActionEvent> event = event1 -> {
                 String name = pec.tfName.getText();
                 String desc = pec.taDesc.getText();
                 String ideaAuth = pec.tfAuthorIdea.getText();//2018-06-01 08:24:40
-                String ideaDate = pec.ideaDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
+                String ideaDate = String.valueOf(pec.ideaDatePicker.getValue());
                 String pluginAuth = pec.tfAuthorPlugin.getText();
-                String pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
+                String pluginDate = String.valueOf(pec.pluginDatePicker.getValue());
+                pluginDate = pluginDate == null ? "" : pluginDate;//Error correction
                 Boolean cbEnabled = pec.cbEnabled.isSelected();
                 String req = pec.taRequirements.getText();
+                //<editor-fold desc="ErrorCheck">
+                int state = 0;
+                if (name.equals("") || desc.equals("") || ideaAuth.equals("") || ideaDate.equals("")) {
+                    msgDlgController.showError("Adding new Plugin Exception: Basic information", "Illegal Empty fields");
+                    actionEvent.consume();
+                    return;
+                }
+                if (!req.equals("") || cbEnabled){
+                    state = 1;
+                }
+                if (!pluginAuth.equals("") || !pluginDate.equals("null")){
+                    if (pluginAuth.equals("") || pluginDate.equals("null")){
+                        msgDlgController.showError("Adding new Plugin Exception: Plugin Author information", "Illegal Empty fields");
+                        actionEvent.consume();
+                        return;
+                    }else state = 2;
+                }
+                //</editor-fold>
                 String sql = "";
                 try {
-                    sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pPluginAuthor,pIdeaDate,pPluginDate,pEnabledByDefault,pRequirements) VALUES " +
-                            "('" + name + "','" + desc + "','" + ideaAuth + "','" + pluginAuth + "','" + ideaDate + "','" + pluginDate + "','" + cbEnabled + "','" + req + "')";
+                    switch (state){
+                        case 0 :{
+                            sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pIdeaDate) VALUES " +
+                                    "('" + name + "','" + desc + "','" + ideaAuth + "','" + ideaDate + "')";
+                            break;
+                        }
+                        case 1 :{
+                            sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pIdeaDate,pEnabledByDefault,pRequirements) VALUES " +
+                                    "('" + name + "','" + desc + "','" + ideaAuth + "','" + ideaDate + "','" + cbEnabled + "','" + req + "')";
+                            break;
+                        }
+                        case 2 :{
+                            sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pPluginAuthor,pIdeaDate,pPluginDate,pEnabledByDefault,pRequirements) VALUES " +
+                                    "('" + name + "','" + desc + "','" + ideaAuth + "','" + pluginAuth + "','" + ideaDate + "','" + pluginDate + "','" + cbEnabled + "','" + req + "')";
+                            break;
+                        }
+                    }
                     dbController.execute(sql);
                     sql = "SELECT * FROM Plugins";
                     ResultSet resultSet = dbController.executeQuery(sql);
@@ -457,12 +536,14 @@ public class MainController implements Initializable {
                     Plugins newPlugin = new Plugins(name, desc, ideaAuth, ideaDate, cbEnabled, req);
                     newPlugin.setId(id);
                     obsListPurpose.add(newPlugin);
+                    pec.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
                     System.out.println("unable to do sql for: " + sql);
+                    e.printStackTrace();
                 }
-
-            });
+            };
+            pec.fireEvent = event;
             newStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -476,7 +557,9 @@ public class MainController implements Initializable {
     public void setBtnDelPlugin(ActionEvent actionEvent) {
 
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Project">
     public void setBtnAddProj(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/ProjectScreen.fxml"));
@@ -503,7 +586,7 @@ public class MainController implements Initializable {
                     System.out.println("unable to do sql for: " + sql);
                 }
             };
-            pec.fireEvnt = event;
+            pec.fireEvent = event;
             newStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -544,7 +627,7 @@ public class MainController implements Initializable {
                     System.out.println("unable to do sql for: " + sql);
                 }
             };
-            pec.fireEvnt = event;
+            pec.fireEvent = event;
             newStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -574,7 +657,9 @@ public class MainController implements Initializable {
             System.out.println("unable to do sql for: " + sql);
         }
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Idea">
     public void setBtnAddIdea(ActionEvent actionEvent) {
 
     }
@@ -582,6 +667,8 @@ public class MainController implements Initializable {
     public void setBtnEditIdea(ActionEvent actionEvent) {
 
     }
+    //</editor-fold>
+
     //</editor-fold>
 
 }

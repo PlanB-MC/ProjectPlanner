@@ -1,4 +1,4 @@
-package val.pp.preload;
+package val.pp.screens;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +8,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import val.pp.controller.dbController;
+import val.pp.controller.msgDlgController;
+
+import java.io.IOException;
 
 public class App extends Application {
     public static Stage primaryStage;
@@ -29,7 +32,21 @@ public class App extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setScene(new Scene(screen_HomeScreen));
         primaryStage.setTitle("Project Planner");
+        initPopups();
         primaryStage.show();
         ppSplash.splashScreen.hide();
+    }
+
+    private void initPopups() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/messageDialog.fxml"));
+            Parent newScreen = loader.load();
+            msgDlgController mdc = loader.getController();
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "ERROR");
+            msgDlgController.thisCtrl = mdc;
+            msgDlgController.stage = newStage;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
