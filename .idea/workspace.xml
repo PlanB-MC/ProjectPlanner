@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/PluginEditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/PluginEditorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -69,8 +65,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="705" selection-start-line="705" selection-end-line="705" />
+            <state relative-caret-position="343">
+              <caret line="713" column="31" lean-forward="true" selection-start-line="713" selection-start-column="31" selection-end-line="713" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2825#2856#0" />
@@ -95,33 +91,6 @@
                 <element signature="e#26500#27573#0" />
                 <element signature="e#27250#27277#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Plugins" pinned="false" current-in-tab="false">
-        <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Plugins">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ideas" pinned="false" current-in-tab="false">
-        <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Ideas">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DateTimeFormatter.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/time/format/DateTimeFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="216" column="35" selection-start-line="216" selection-start-column="16" selection-end-line="216" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -406,7 +375,7 @@
       <workItem from="1528540614768" duration="13162000" />
       <workItem from="1528562033492" duration="5382000" />
       <workItem from="1528621552844" duration="39975000" />
-      <workItem from="1528708442955" duration="22644000" />
+      <workItem from="1528708442955" duration="22935000" />
     </task>
     <task id="LOCAL-00001" summary="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project">
       <created>1528659651523</created>
@@ -450,17 +419,32 @@
       <option name="project" value="LOCAL" />
       <updated>1528726938954</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed Date issue(Hopefully).&#10;Fixed some other things.&#10;Edit plugin working.">
+      <created>1528736072514</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1528736072514</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed Date issue(Hopefully).&#10;Fixed some other things.&#10;Edit plugin working.">
+      <created>1528736132970</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1528736132970</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132938000" />
+    <option name="totallyTimeSpent" value="133229000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32897604" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
@@ -469,13 +453,13 @@
       <window_info id="Structure" order="1" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39978212" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39978212" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
       <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
       <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="8" type="WINDOWED" weight="0.38779956" />
@@ -540,19 +524,21 @@
     <MESSAGE value="Updated Main Screen.&#10;Organized MainController code." />
     <MESSAGE value="Add new Plugin working. Needs piston check" />
     <MESSAGE value="Add plugin selection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add plugin selection" />
+    <MESSAGE value="Fixed Date issue(Hopefully).&#10;Fixed some other things.&#10;Edit plugin working." />
+    <MESSAGE value="Updated Model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Model." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url />
+          <url>file://$PROJECT_DIR$/src/val/pp/controller/MainController.java</url>
           <line>702</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url />
+          <url>file://$PROJECT_DIR$/src/val/pp/controller/MainController.java</url>
           <line>622</line>
           <properties />
           <option name="timeStamp" value="75" />
@@ -679,7 +665,7 @@
             <node>18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Users</node>
           </SelectedNodes>
           <Categories>
-            <Category />
+            <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
           <SCOPE>All</SCOPE>
@@ -992,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_6.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/time/format/DateTimeFormatterBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29524">
@@ -1031,10 +1010,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="705" selection-start-line="705" selection-end-line="705" />
+        <state relative-caret-position="343">
+          <caret line="713" column="31" lean-forward="true" selection-start-line="713" selection-start-column="31" selection-end-line="713" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2825#2856#0" />

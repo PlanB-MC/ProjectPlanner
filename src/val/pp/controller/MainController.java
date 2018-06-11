@@ -531,12 +531,12 @@ public class MainController implements Initializable {
                 String pluginDate = "";
                 try {
                     ideaDate = pec.ideaDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     //ignore
                 }
                 try {
                     pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     //ignore
                 }
                 Boolean cbEnabled = pec.cbEnabled.isSelected();
@@ -641,12 +641,12 @@ public class MainController implements Initializable {
                 String pluginDate = "";
                 try {
                     ideaDate = pec.ideaDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     //ignore
                 }
                 try {
                     pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     //ignore
                 }
                 //<editor-fold desc="ErrorCheck">
@@ -701,7 +701,7 @@ public class MainController implements Initializable {
                     curPlugin.setRequirements(req);
                     curPlugin.setPluginAuthor(pluginAuth);
                     curPlugin.setDatePlugin(pluginDate);
-                  //  (Plugins) curList.getValue().getItems().get(curList.getKey());
+                    //  (Plugins) curList.getValue().getItems().get(curList.getKey());
                     pec.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
