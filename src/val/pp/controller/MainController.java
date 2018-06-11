@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
@@ -44,6 +45,7 @@ public class MainController implements Initializable {
     public Button btnAddPlugin;
     public Button btnEditPlugin;
     public Button btnDelPlugin;
+    public ChoiceBox<Plugins> choicePlugins;
     private ListView curList = null;
     private ObservableList<Project> obsListProjects = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListReleased = FXCollections.observableArrayList(new ArrayList<>());
@@ -57,13 +59,14 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        TEST();
         initLoadFromDB();
         doBindings();
         refreshPluginList();
         refreshProjectList();
 
     }
+
+    //<editor-fold desc="Bindings">
 
     private void doBindings() {
         //Plugins
@@ -280,25 +283,9 @@ public class MainController implements Initializable {
         listIdeaA.getSelectionModel().select(indexIA);
         listIdeaP.getSelectionModel().select(indexIP);
     }
+    //</editor-fold>
 
-    private void TEST() {
-        //SAMPLES
-        /*String desc = "Lorus Ispum sup sup. Soek jy n broodjie?";
-        Project numOne = new Project("TEST", desc + "1");
-        Project numTwo = new Project("IS IT?", desc + "2");
-        Project numThree = new Project("BLEH", desc + "3");
-        obsListProjects.addAll(numOne, numTwo, numThree);*/
-
-       /* valBox numbaOee = new valBox(20, 20, "AWE");
-        valBox qwe = new valBox(20, 50, "AWE");
-        valBox numdgsbaOee = new valBox(20, 70, "AWE");
-        valBox numfhbaOee = new valBox(20, 100, "AWE");
-        paneLeft.getChildren().addAll(numbaOee, qwe, numdgsbaOee, numfhbaOee);*/
-
-
-        // valPane vp = new valPane(paneLeft);
-    }
-
+    //<editor-fold desc="Database Stuff">
     private void initLoadFromDB() {
         String sql = "";
         ResultSet resultset = null;
@@ -436,14 +423,17 @@ public class MainController implements Initializable {
         }
         dbController.closeDB();
     }
+    //</editor-fold>
 
+    //<editor-fold desc="Buttons onAction">
     public void setBtnAddPlugin(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/ProjectScreen.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/PluginScreen.fxml"));
             Parent newScreen = loader.load();
             PluginEditorController pec = loader.getController();
             Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Plugin Information");
-            pec.obsListProj = obsListProjects;
+            //pec.obsListProj.setAll(obsListProjects);
+            Project selProject = listProjects.getSelectionModel().getSelectedItem();
             newStage.onCloseRequestProperty().addListener((observable, oldValue, newValue) -> {
                 String name = pec.tfName.getText();
                 String desc = pec.taDesc.getText();
@@ -453,7 +443,6 @@ public class MainController implements Initializable {
                 String pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
                 Boolean cbEnabled = pec.cbEnabled.isSelected();
                 String req = pec.taRequirements.getText();
-                Project selProject = pec.lbProjects.getSelectionModel().getSelectedItem();
                 String sql = "";
                 try {
                     sql = "INSERT INTO Plugins (pName,pDesc,pIdeaAuthor,pPluginAuthor,pIdeaDate,pPluginDate,pEnabledByDefault,pRequirements) VALUES " +
@@ -564,7 +553,7 @@ public class MainController implements Initializable {
 
     public void setBtnDelProj(ActionEvent actionEvent) {
         Project curProj = listProjects.getSelectionModel().getSelectedItem();
-        if (listProjects.getItems().size() <= 1){
+        if (listProjects.getItems().size() <= 1) {
             //TODO: ERROR HANDLING
             return;
         }
@@ -572,6 +561,10 @@ public class MainController implements Initializable {
         index = index > 0 ? 0 : 1;
         String sql = "";
         try {
+            sql = "DELETE FROM ProjectPlugins WHERE projectID = " + curProj.getID() + "";
+            dbController.execute(sql);
+            sql = "DELETE FROM ProjectIdeas WHERE projectID = " + curProj.getID() + "";
+            dbController.execute(sql);
             sql = "DELETE FROM Projects WHERE pId = " + listProjects.getSelectionModel().getSelectedItem().getID() + "";
             dbController.execute(sql);
             listProjects.getSelectionModel().select(index);
@@ -589,4 +582,6 @@ public class MainController implements Initializable {
     public void setBtnEditIdea(ActionEvent actionEvent) {
 
     }
+    //</editor-fold>
+
 }
