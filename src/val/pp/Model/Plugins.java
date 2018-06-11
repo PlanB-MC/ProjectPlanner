@@ -45,8 +45,6 @@ public class Plugins {
         this.level.setValue(level);
     }
 
-
-
     public int getLevel() {
         return level.get();
     }
@@ -166,12 +164,20 @@ public class Plugins {
         return ideaAuthor.get();
     }
 
+    public void setIdeaAuthor(String ideaAuthor) {
+        this.ideaAuthor.set(ideaAuthor);
+    }
+
     public StringProperty ideaAuthorProperty() {
         return ideaAuthor;
     }
 
     public String getDateIdea() {
         return dateIdea.get();
+    }
+
+    public void setDateIdea(String dateIdea) {
+        this.dateIdea.set(dateIdea);
     }
 
     public StringProperty dateIdeaProperty() {

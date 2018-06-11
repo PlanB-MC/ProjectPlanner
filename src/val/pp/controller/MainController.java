@@ -12,6 +12,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import val.pp.Model.Ideas;
 import val.pp.Model.Plugins;
 import val.pp.Model.Project;
@@ -20,6 +21,8 @@ import val.pp.screens.App;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -45,7 +48,7 @@ public class MainController implements Initializable {
     public Button btnEditPlugin;
     public Button btnDelPlugin;
     public ChoiceBox<Plugins> choicePlugins;
-    private ListView curList = null;
+    private Pair<Integer, ListView> curList = new Pair<>(-1, null);
     private ObservableList<Project> obsListProjects = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListReleased = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListFixes = FXCollections.observableArrayList(new ArrayList<>());
@@ -90,27 +93,33 @@ public class MainController implements Initializable {
         });
 
         listReleased.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listReleased);
+            if (listReleased.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listReleased);
             changeTXTinfo(oldValue, newValue);
         });
         listFixes.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listFixes);
+            if (listFixes.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listFixes);
             changeTXTinfo(oldValue, newValue);
         });
         listDev.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listDev);
+            if (listDev.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listDev);
             changeTXTinfo(oldValue, newValue);
         });
         listQue.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listQue);
+            if (listQue.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listQue);
             changeTXTinfo(oldValue, newValue);
         });
         listFeas.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listFeas);
+            if (listFeas.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listFeas);
             changeTXTinfo(oldValue, newValue);
         });
         listPurpose.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listPurpose);
+            if (listPurpose.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listPurpose);
             changeTXTinfo(oldValue, newValue);
         });
 
@@ -131,11 +140,13 @@ public class MainController implements Initializable {
         });
 
         listIdeaA.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listIdeaA);
+            if (listIdeaA.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listIdeaA);
             changeTXTinfo(oldValue, newValue);
         });
         listIdeaP.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            setCur(listIdeaP);
+            if (listIdeaP.getSelectionModel().getSelectedIndex() != -1)
+                setCur(listIdeaP);
             changeTXTinfo(oldValue, newValue);
         });
 
@@ -173,7 +184,8 @@ public class MainController implements Initializable {
     }
 
     private void setCur(ListView listReleased) {
-        curList = listReleased;
+        curList = new Pair<>(listReleased.getSelectionModel().getSelectedIndex(), listReleased);
+        System.out.println(curList);
     }
 
     private void changeTXTinfo(Project oldValue, Project newValue) {
@@ -229,37 +241,37 @@ public class MainController implements Initializable {
         int indexLF = listFeas.getSelectionModel().getSelectedIndex();
         int indexLP = listPurpose.getSelectionModel().getSelectedIndex();
 
-        if (curList == listReleased && indexLR >= 0) {
+        if (curList.getValue() == listReleased && indexLR >= 0) {
             listReleased.fireEvent(new ListView.EditEvent<>(
                             listReleased, ListView.editCommitEvent(), obsListReleased.get(indexLR), indexLR
                     )
             );
         }
-        if (curList == listFixes && indexLFX >= 0) {
+        if (curList.getValue() == listFixes && indexLFX >= 0) {
             listFixes.fireEvent(new ListView.EditEvent<>(
                             listFixes, ListView.editCommitEvent(), obsListFixes.get(indexLFX), indexLFX
                     )
             );
         }
-        if (curList == listDev && indexLD >= 0) {
+        if (curList.getValue() == listDev && indexLD >= 0) {
             listDev.fireEvent(new ListView.EditEvent<>(
                             listDev, ListView.editCommitEvent(), obsListDev.get(indexLD), indexLD
                     )
             );
         }
-        if (curList == listQue && indexLQ >= 0) {
+        if (curList.getValue() == listQue && indexLQ >= 0) {
             listQue.fireEvent(new ListView.EditEvent<>(
                             listQue, ListView.editCommitEvent(), obsListQue.get(indexLQ), indexLQ
                     )
             );
         }
-        if (curList == listFeas && indexLF >= 0) {
+        if (curList.getValue() == listFeas && indexLF >= 0) {
             listFeas.fireEvent(new ListView.EditEvent<>(
                             listFeas, ListView.editCommitEvent(), obsListFeas.get(indexLF), indexLF
                     )
             );
         }
-        if (curList == listPurpose && indexLP >= 0) {
+        if (curList.getValue() == listPurpose && indexLP >= 0) {
             listPurpose.fireEvent(new ListView.EditEvent<>(
                             listPurpose, ListView.editCommitEvent(), obsListPurpose.get(indexLP), indexLP
                     )
@@ -277,13 +289,13 @@ public class MainController implements Initializable {
         int indexIA = listIdeaA.getSelectionModel().getSelectedIndex();
         int indexIP = listIdeaP.getSelectionModel().getSelectedIndex();
 
-        if (curList == listIdeaA && indexIA >= 0) {
+        if (curList.getValue() == listIdeaA && indexIA >= 0) {
             listIdeaA.fireEvent(new ListView.EditEvent<>(
                             listIdeaA, ListView.editCommitEvent(), obsListIdeaA.get(indexIA), indexIA
                     )
             );
         }
-        if (curList == listIdeaP && indexIP >= 0) {
+        if (curList.getValue() == listIdeaP && indexIP >= 0) {
             listIdeaP.fireEvent(new ListView.EditEvent<>(
                             listIdeaP, ListView.editCommitEvent(), obsListIdeaP.get(indexIP), indexIP
                     )
@@ -491,7 +503,7 @@ public class MainController implements Initializable {
                     try {
                         sql = "INSERT INTO ProjectPlugins (pluginID, projectID) VALUES (" + newValue.getId() + "," + curProjID + ")";
                         dbController.execute(sql);
-                        switch_Level_on_Plugin(newValue.getLevel(),newValue);
+                        switch_Level_on_Plugin(newValue.getLevel(), newValue);
                         dbController.closeDB();
                     } catch (SQLException e) {
                         System.out.println("unable to do sql for: " + sql);
@@ -513,11 +525,20 @@ public class MainController implements Initializable {
             EventHandler<ActionEvent> event = event1 -> {
                 String name = pec.tfName.getText();
                 String desc = pec.taDesc.getText();
-                String ideaAuth = pec.tfAuthorIdea.getText();//2018-06-01 08:24:40
-                String ideaDate = String.valueOf(pec.ideaDatePicker.getValue());
+                String ideaAuth = pec.tfAuthorIdea.getText();
                 String pluginAuth = pec.tfAuthorPlugin.getText();
-                String pluginDate = String.valueOf(pec.pluginDatePicker.getValue());
-                pluginDate = pluginDate == null ? "" : pluginDate;//Error correction
+                String ideaDate = "";
+                String pluginDate = "";
+                try {
+                    ideaDate = pec.ideaDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e){
+                    //ignore
+                }
+                try {
+                    pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e){
+                    //ignore
+                }
                 Boolean cbEnabled = pec.cbEnabled.isSelected();
                 String req = pec.taRequirements.getText();
                 //<editor-fold desc="ErrorCheck">
@@ -530,8 +551,8 @@ public class MainController implements Initializable {
                 if (!req.equals("") || cbEnabled) {
                     state = 1;
                 }
-                if (!pluginAuth.equals("") || !pluginDate.equals("null")) {
-                    if (pluginAuth.equals("") || pluginDate.equals("null")) {
+                if (!pluginAuth.equals("") || !pluginDate.equals("")) {
+                    if (pluginAuth.equals("") || pluginDate.equals("")) {
                         msgDlgController.showError("Adding new Plugin Exception: Plugin Author information", "Illegal Empty fields");
                         actionEvent.consume();
                         return;
@@ -564,7 +585,7 @@ public class MainController implements Initializable {
                     int id = resultSet.getInt("pId");
                     sql = "INSERT INTO ProjectPlugins (pluginID, projectID) VALUES ('" + id + "','" + selProject.getID() + "')";
                     dbController.execute(sql);
-                    Plugins newPlugin = new Plugins(name, desc, ideaAuth, ideaDate, cbEnabled, req);
+                    Plugins newPlugin = new Plugins(name, desc, ideaAuth, ideaDate, cbEnabled, req, pluginAuth, pluginDate);
                     newPlugin.setId(id);
                     obsListPurpose.add(newPlugin);
                     pec.done = true;
@@ -582,7 +603,117 @@ public class MainController implements Initializable {
     }
 
     public void setBtnEditPlugin(ActionEvent actionEvent) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/val/pp/views/PluginScreen.fxml"));
+            Parent newScreen = loader.load();
+            PluginEditorController pec = loader.getController();
+            Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Plugin Information");
+            Project selProject = listProjects.getSelectionModel().getSelectedItem();
+            Plugins curPlugin;
+            try {
+                if (curList.getValue() == null) throw new NullPointerException();
+                curPlugin = (Plugins) curList.getValue().getItems().get(curList.getKey());
+            } catch (ClassCastException e) {
+                msgDlgController.showError("Editing Plugin Exception: No Plugin!", "Please select a plugin :)");
+                return;
+            } catch (NullPointerException e) {
+                msgDlgController.showError("Editing Plugin Exception: No Plugin!", "Please select a plugin :)");
+                return;
+            }
+            pec.tfName.setText(curPlugin.getName());
+            pec.taDesc.setText(curPlugin.getDescription());
+            pec.tfAuthorIdea.setText(curPlugin.getIdeaAuthor());//2018-06-01 08:24:40
+            pec.ideaDatePicker.setValue(LocalDate.parse(curPlugin.getDateIdea(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            pec.tfAuthorPlugin.setText(curPlugin.getPluginAuthor());
+            pec.pluginDatePicker.setValue(LocalDate.parse(curPlugin.getDatePlugin(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            pec.cbEnabled.setSelected(curPlugin.isEnabledByDefault());
+            pec.taRequirements.setText(curPlugin.getRequirements());
+            pec.tfAuthorIdea.setEditable(false);
+            pec.ideaDatePicker.setEditable(false);
+            EventHandler<ActionEvent> event = event1 -> {
+                String name = pec.tfName.getText();
+                String desc = pec.taDesc.getText();
+                String ideaAuth = pec.tfAuthorIdea.getText();//2018-06-01 08:24:40
+                String pluginAuth = pec.tfAuthorPlugin.getText();
+                Boolean cbEnabled = pec.cbEnabled.isSelected();
+                String req = pec.taRequirements.getText();
+                String ideaDate = "";
+                String pluginDate = "";
+                try {
+                    ideaDate = pec.ideaDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e){
+                    //ignore
+                }
+                try {
+                    pluginDate = pec.pluginDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                } catch (NullPointerException e){
+                    //ignore
+                }
+                //<editor-fold desc="ErrorCheck">
+                int state = 0;
+                if (name.equals("") || desc.equals("") || ideaAuth.equals("") || ideaDate.equals("")) {
+                    msgDlgController.showError("Updating Plugin Exception: Basic information", "Illegal Empty fields");
+                    actionEvent.consume();
+                    return;
+                }
+                if (!req.equals("") || cbEnabled) {
+                    state = 1;
+                }
+                if (!pluginAuth.equals("") || !pluginDate.equals("null")) {
+                    if (pluginAuth.equals("") || pluginDate.equals("null")) {
+                        msgDlgController.showError("Updating Plugin Exception: Plugin Author information", "Illegal Empty fields");
+                        actionEvent.consume();
+                        return;
+                    } else state = 2;
+                }
+                //</editor-fold>
+                String sql = "";
+                try {
+                    switch (state) {
+                        case 0: {
+                            sql = "UPDATE Plugins " +
+                                    "SET pName = '" + name + "', pDesc = '" + desc + "', pIdeaAuthor = '" + ideaAuth + "', pIdeaDate = '" + ideaDate + "' " +
+                                    "WHERE pId = " + curPlugin.getId() + "";
+                            break;
+                        }
+                        case 1: {
+                            sql = "UPDATE Plugins " +
+                                    "SET pName = '" + name + "', pDesc = '" + desc + "', pIdeaAuthor = '" + ideaAuth + "', pIdeaDate = '" + ideaDate + "' " +
+                                    ", pEnabledByDefault = " + cbEnabled + ", pRequirements = '" + req + "'" +
+                                    "WHERE pId = " + curPlugin.getId() + "";
+                            break;
+                        }
+                        case 2: {
+                            sql = "UPDATE Plugins " +
+                                    "SET pName = '" + name + "', pDesc = '" + desc + "', pIdeaAuthor = '" + ideaAuth + "', pIdeaDate = '" + ideaDate + "' " +
+                                    ", pEnabledByDefault = " + cbEnabled + ", pRequirements = '" + req + "'" +
+                                    ", pPluginAuthor = '" + pluginAuth + "', pPluginDate = '" + pluginDate + "'" +
+                                    "WHERE pId = " + curPlugin.getId() + "";
+                            break;
+                        }
+                    }
+                    dbController.execute(sql);
+                    curPlugin.setName(name);
+                    curPlugin.setDescription(desc);
+                    curPlugin.setIdeaAuthor(ideaAuth);
+                    curPlugin.setDateIdea(ideaDate);
+                    curPlugin.setEnabledByDefault(cbEnabled);
+                    curPlugin.setRequirements(req);
+                    curPlugin.setPluginAuthor(pluginAuth);
+                    curPlugin.setDatePlugin(pluginDate);
+                  //  (Plugins) curList.getValue().getItems().get(curList.getKey());
+                    pec.done = true;
+                    dbController.closeDB();
+                } catch (SQLException e) {
+                    System.out.println("unable to do sql for: " + sql);
+                    e.printStackTrace();
+                }
+            };
+            pec.fireEvent = event;
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void setBtnDelPlugin(ActionEvent actionEvent) {

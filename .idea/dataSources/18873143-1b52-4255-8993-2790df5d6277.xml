@@ -1336,7 +1336,7 @@
     </column>
     <column id="335" parent="326" name="iIdeaDate">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1396,13 +1396,13 @@
     </column>
     <column id="345" parent="327" name="pIdeaDate">
       <Position>6</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="346" parent="327" name="pPluginDate">
       <Position>7</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="347" parent="327" name="pEnabledByDefault">
