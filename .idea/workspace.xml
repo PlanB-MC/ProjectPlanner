@@ -7,15 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/val/pp/controller/IdeaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Ideas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Ideas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/Draggable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/Draggable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/valPane.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Ideas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Ideas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/ProjectEditerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/ProjectEditerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/valBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/valPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,49 +82,25 @@
     </expand>
     <select />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Ideas.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="660">
-                    <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-                    <folding>
-                      <element signature="e#667#668#0" expanded="true" />
-                      <element signature="e#705#706#0" expanded="true" />
-                      <element signature="e#1002#1003#0" expanded="true" />
-                      <element signature="e#1033#1034#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="ProjectPlanner" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="1002" column="55" lean-forward="true" selection-start-line="1002" selection-start-column="55" selection-end-line="1002" selection-end-column="55" />
+            <state relative-caret-position="465">
+              <caret line="210" column="5" lean-forward="true" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2825#2856#0" />
                 <element signature="e#3008#3038#0" />
                 <element signature="e#5669#5697#0" />
                 <element signature="e#6596#6627#0" />
                 <element signature="e#7044#7078#0" />
                 <element signature="e#7102#7134#0" />
+                <element signature="e#7810#7956#0" />
+                <element signature="e#9292#9331#0" />
                 <element signature="e#7223#7603#0" />
                 <element signature="e#7609#7980#0" />
                 <element signature="e#7986#8363#0" />
@@ -132,46 +112,49 @@
                 <element signature="e#17081#18021#0" />
                 <element signature="e#17628#19555#0" />
                 <element signature="e#20104#20385#0" />
+                <element signature="e#22149#24075#0" />
+                <element signature="e#22150#23010#0" />
+                <element signature="e#21731#21770#0" />
+                <element signature="e#21776#21805#0" />
                 <element signature="e#21776#26345#0" />
                 <element signature="e#26351#32312#0" />
                 <element signature="e#32855#33930#0" />
+                <element signature="e#22588#22618#0" />
                 <element signature="e#22938#24568#0" />
                 <element signature="e#24574#26494#0" />
                 <element signature="e#26500#27573#0" />
+                <element signature="e#27250#27277#0" />
+                <element signature="e#39400#41027#0" />
+                <element signature="e#42309#44652#0" />
+                <element signature="e#45472#47225#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console_8.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql">
+      <file leaf-file-name="Draggable.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="61" selection-start-column="61" selection-end-column="61" />
+            <state relative-caret-position="474">
+              <caret line="84" column="60" lean-forward="true" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PluginEditorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java">
+      <file leaf-file-name="Cell.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/control/Cell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="290">
+              <caret line="407" column="30" selection-start-line="407" selection-start-column="30" selection-end-line="407" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdeaController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/val/pp/controller/IdeaController.java">
+      <file leaf-file-name="ObjectPropertyBase.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="312">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
             </state>
           </provider>
         </entry>
@@ -198,6 +181,9 @@
       <find>\&quot;</find>
       <find>DateTimeFormatter</find>
       <find>unparsed</find>
+      <find>populateChoicePlugins</find>
+      <find>addPluginToProject</find>
+      <find>addIdeaToProject</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,7 +208,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_1.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/valBox.java" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/valPane.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_2.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_3.sql" />
@@ -240,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/val/pp/Main.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_7.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/screens/App.java" />
         <option value="$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml" />
@@ -249,7 +233,10 @@
         <option value="$PROJECT_DIR$/src/val/pp/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql" />
+        <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" />
       </list>
     </option>
   </component>
@@ -344,7 +331,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Azure (Microsoft)&#10;DDL Data Source&#10;MySQL" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -354,16 +341,16 @@
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="val.pp.Model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gertp\OneDrive - Nelson Mandela University\Projects\planB\ProjectPlanner\res" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gertp\OneDrive - Nelson Mandela University\Projects\planB\ProjectPlanner\src\val\pp\resources" />
       <recent name="C:\Users\gertp\OneDrive - Nelson Mandela University\Projects\ProjectPlanner\src\val\pp\views" />
       <recent name="C:\Users\gertp\OneDrive - Nelson Mandela University\Projects\ProjectPlanner\res" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gertp\OneDrive - Nelson Mandela University\Projects\planB\ProjectPlanner\res" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="val.pp.Model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -460,7 +447,7 @@
       <workItem from="1528540614768" duration="13162000" />
       <workItem from="1528562033492" duration="5382000" />
       <workItem from="1528621552844" duration="39975000" />
-      <workItem from="1528708442955" duration="32919000" />
+      <workItem from="1528708442955" duration="38511000" />
     </task>
     <task id="LOCAL-00001" summary="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project">
       <created>1528659651523</created>
@@ -532,79 +519,54 @@
       <option name="project" value="LOCAL" />
       <updated>1528738937218</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add/Edit/Del Ideas">
+      <created>1528746808007</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1528746808007</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143213000" />
+    <option name="totallyTimeSpent" value="148805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32897604" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.12846482" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.12846482" />
       <window_info id="Structure" order="1" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" weight="0.39978212" />
+      <window_info id="UI Designer" order="3" />
+      <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39978212" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32897604" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32897604" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="8" type="WINDOWED" visible="true" weight="0.38779956" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="12" type="WINDOWED" weight="0.38779956" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991708" visible="true" weight="0.17217484" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
+      <window_info anchor="right" id="SciView" order="6" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="4" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.5849673" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20915033" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32897604" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4991708" visible="true" weight="0.1663113" />
-      <window_info anchor="right" id="SciView" order="6" weight="0.32995737" />
-      <window_info anchor="right" id="Database" order="7" weight="0.20255864" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info id="Structure" order="1" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -627,11 +589,26 @@
     <MESSAGE value="Updated Model." />
     <MESSAGE value="Cleaned MainController." />
     <MESSAGE value="Delete Plugin working.&#10;Changed name of messageDialog." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete Plugin working.&#10;Changed name of messageDialog." />
+    <MESSAGE value="Add/Edit/Del Ideas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add/Edit/Del Ideas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="76" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="84" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -668,104 +645,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/input/DataFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2222">
-          <caret line="131" column="11" selection-start-line="131" selection-start-column="11" selection-end-line="131" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/18873143-1b52-4255-8993-2790df5d6277">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>18873143-1b52-4255-8993-2790df5d6277</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Plugins</node>
-            <node x="410.0" y="66.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Ideas</node>
-            <node x="353.75" y="322.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectIdea</node>
-            <node x="229.99999999999997" y="66.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Projects</node>
-            <node x="0.0" y="440.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Users</node>
-            <node x="115.99999999999997" y="322.0">18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectPlugins</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectPlugins" target="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Projects">
-              <point x="35.75" y="-36.5" />
-              <point x="223.24999999999997" y="297.0" />
-              <point x="270.0" y="297.0" />
-              <point x="-40.0" y="70.0" />
-            </edge>
-            <edge source="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectPlugins" target="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Plugins">
-              <point x="-35.75" y="-36.5" />
-              <point x="151.74999999999997" y="297.0" />
-              <point x="105.0" y="297.0" />
-              <point x="0.0" y="136.0" />
-            </edge>
-            <edge source="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectIdea" target="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Projects">
-              <point x="-35.75" y="-36.5" />
-              <point x="389.5" y="297.0" />
-              <point x="350.0" y="297.0" />
-              <point x="40.0" y="70.0" />
-            </edge>
-            <edge source="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.ProjectIdea" target="18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Ideas">
-              <point x="35.75" y="-36.5" />
-              <point x="461.0" y="297.0" />
-              <point x="500.5" y="297.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.1483333333333334" x="123.0" y="189.0" />
-          <SelectedNodes>
-            <node>18873143-1b52-4255-8993-2790df5d6277.TABLE:s6_ProjectPlanner.Users</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/valPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -840,13 +723,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#handleStateChangeNotification#0;class#ppSplash#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/dbController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
@@ -931,19 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297">
           <caret line="467" column="12" selection-start-line="467" selection-start-column="12" selection-end-line="467" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#4649#4650#0" expanded="true" />
-            <element signature="e#4696#4697#0" expanded="true" />
-            <element signature="e#4899#4900#0" expanded="true" />
-            <element signature="e#4942#4943#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,6 +937,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="61" selection-start-column="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/dbController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -1084,38 +974,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="308">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/property/IntegerProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/property/SimpleIntegerProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
           <folding>
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/value/ObservableObjectValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="61" selection-start-column="61" selection-end-column="61" />
+        <state relative-caret-position="418">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/control/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="407" column="30" selection-start-line="407" selection-start-column="30" selection-end-line="407" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="1002" column="55" lean-forward="true" selection-start-line="1002" selection-start-column="55" selection-end-line="1002" selection-end-column="55" />
+        <state relative-caret-position="465">
+          <caret line="210" column="5" lean-forward="true" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2825#2856#0" />
             <element signature="e#3008#3038#0" />
             <element signature="e#5669#5697#0" />
             <element signature="e#6596#6627#0" />
             <element signature="e#7044#7078#0" />
             <element signature="e#7102#7134#0" />
+            <element signature="e#7810#7956#0" />
+            <element signature="e#9292#9331#0" />
             <element signature="e#7223#7603#0" />
             <element signature="e#7609#7980#0" />
             <element signature="e#7986#8363#0" />
@@ -1127,13 +1051,29 @@
             <element signature="e#17081#18021#0" />
             <element signature="e#17628#19555#0" />
             <element signature="e#20104#20385#0" />
+            <element signature="e#22149#24075#0" />
+            <element signature="e#22150#23010#0" />
+            <element signature="e#21731#21770#0" />
+            <element signature="e#21776#21805#0" />
             <element signature="e#21776#26345#0" />
             <element signature="e#26351#32312#0" />
             <element signature="e#32855#33930#0" />
+            <element signature="e#22588#22618#0" />
             <element signature="e#22938#24568#0" />
             <element signature="e#24574#26494#0" />
             <element signature="e#26500#27573#0" />
+            <element signature="e#27250#27277#0" />
+            <element signature="e#39400#41027#0" />
+            <element signature="e#42309#44652#0" />
+            <element signature="e#45472#47225#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="84" column="60" lean-forward="true" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
         </state>
       </provider>
     </entry>

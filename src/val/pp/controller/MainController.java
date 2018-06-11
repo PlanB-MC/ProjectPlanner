@@ -16,6 +16,7 @@ import javafx.util.Pair;
 import val.pp.Model.Ideas;
 import val.pp.Model.Plugins;
 import val.pp.Model.Project;
+import val.pp.Model.ccBoxList.DragListenerHook;
 import val.pp.screens.App;
 
 import java.net.URL;
@@ -61,6 +62,7 @@ public class MainController implements Initializable {
     private ObservableList<Ideas> obsListIdeaA = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Ideas> obsListIdeaP = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListChoicePlugins = FXCollections.observableArrayList(new ArrayList<>());
+    private ObservableList<Ideas> getObsListChoiceIdeas = FXCollections.observableArrayList(new ArrayList<>());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,6 +71,8 @@ public class MainController implements Initializable {
         refreshProjectList();
         refreshPluginList();
         populateChoicePlugins();
+        populateChoiceIdeas();
+        setDragganles();
         changeTXTinfo(null, listProjects.getSelectionModel().getSelectedItem());//Best solution i can find...
     }
 
@@ -163,6 +167,7 @@ public class MainController implements Initializable {
             changeTXTinfo(oldValue, newValue);
             loadFromDB_PluginIdeas(listProjects.getSelectionModel().getSelectedItem().getID());
             populateChoicePlugins();
+            populateChoiceIdeas();
         });
         //</editor-fold>
 
@@ -170,7 +175,17 @@ public class MainController implements Initializable {
         choicePlugins.getSelectionModel().selectedIndexProperty();
 
         choicePlugins.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> addPluginToProject(newValue)
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null) addPluginToProject(newValue);
+                }
+        );
+
+        choiceIdeas.getSelectionModel().selectedIndexProperty();
+
+        choiceIdeas.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue != null) addIdeaToProject(newValue);
+                }
         );
         //</editor-fold>
 
@@ -185,11 +200,17 @@ public class MainController implements Initializable {
         //</editor-fold>
     }
 
+    private void setDragganles() {
+        DragListenerHook newHook1 = new DragListenerHook(listPurpose);
+        DragListenerHook newHook2 = new DragListenerHook(listFeas);
+    }
+
     private void setCur(ListView listReleased) {
         curList = new Pair<>(listReleased.getSelectionModel().getSelectedIndex(), listReleased);
         System.out.println(curList);
     }
 
+    //<editor-fold desc="update TextAreas">
     private void changeTXTinfo(Project oldValue, Project newValue) {
         //TODO: make project info display
         if (oldValue != null) {
@@ -222,6 +243,7 @@ public class MainController implements Initializable {
             txtPluginInfo.textProperty().bind(newValue.nameProperty());
         }
     }
+    //</editor-fold>
 
     private void refreshProjectList() {
         int index = listProjects.getSelectionModel().getSelectedIndex();
@@ -307,6 +329,7 @@ public class MainController implements Initializable {
         listIdeaA.getSelectionModel().select(indexIA);
         listIdeaP.getSelectionModel().select(indexIP);
     }
+
     //</editor-fold>
 
     //<editor-fold desc="Database Stuff">
@@ -506,6 +529,50 @@ public class MainController implements Initializable {
                         sql = "INSERT INTO ProjectPlugins (pluginID, projectID) VALUES (" + newValue.getId() + "," + curProjID + ")";
                         dbController.execute(sql);
                         switch_Level_on_Plugin(newValue.getLevel(), newValue);
+                        dbController.closeDB();
+                    } catch (SQLException e) {
+                        System.out.println("unable to do sql for: " + sql);
+                    }
+                });
+    }
+
+    private void populateChoiceIdeas() {
+        getObsListChoiceIdeas.clear();
+        String sql = "";
+        ResultSet resultset = null;
+        try {
+            sql = "SELECT * FROM Ideas WHERE iId NOT IN (SELECT ideaID FROM ProjectIdea WHERE projectID = " +
+                    listProjects.getSelectionModel().getSelectedItem().getID() + ")";
+            resultset = dbController.executeQuery(sql);
+            while (resultset.next()) {
+                int id = resultset.getInt("iId");
+                String desc = resultset.getString("iDesc");
+                String name = resultset.getString("iIdeaAuthor");
+                String date = resultset.getString("iIdeaDate");
+                Boolean accepted = resultset.getBoolean("iAccepted");
+                Ideas newIdea = new Ideas(id, desc, name, date, accepted);
+                getObsListChoiceIdeas.add(newIdea);
+            }
+            choiceIdeas.setItems(getObsListChoiceIdeas);
+        } catch (SQLException e) {
+            System.out.println("unable to do sql for: " + sql);
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    private void addIdeaToProject(Ideas newValue) {
+        int curProjID = listProjects.getSelectionModel().getSelectedItem().getID();
+        msgDlgController.showError(
+                "Add to Idea to Project",
+                "Are you sure you want to add: " + newValue.getDesc(),
+                event -> {
+                    String sql = "";
+                    try {
+                        sql = "INSERT INTO ProjectIdea (projectID, ideaID) VALUES (" + curProjID + ", " + newValue.getId() + ")";
+                        dbController.execute(sql);
+                        if (newValue.isAccepted()) obsListIdeaA.add(newValue);
+                        else obsListIdeaP.add(newValue);
                         dbController.closeDB();
                     } catch (SQLException e) {
                         System.out.println("unable to do sql for: " + sql);

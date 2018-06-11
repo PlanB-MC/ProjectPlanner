@@ -2,7 +2,10 @@ package val.pp.Model.ccBoxList;
 
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListCell;
-import javafx.scene.input.*;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import val.pp.Model.Plugins;
 
 import java.util.ArrayList;
@@ -10,6 +13,7 @@ import java.util.List;
 
 class Draggable extends ListCell<Plugins> {
     //private final String curString;
+    private static ObservableList<Plugins> sourceList;
     private final ObservableList<Plugins> mainList;
 
     public Draggable(ObservableList<Plugins> mainList) {
@@ -27,9 +31,11 @@ class Draggable extends ListCell<Plugins> {
 
             Dragboard dragboard = startDragAndDrop(TransferMode.MOVE);
             ClipboardContent content = new ClipboardContent();
-            content.put(new DataFormat("1997"), getItem());//TODO: could be erroneous
-            dragboard.setContent(content);
 
+            content.putString(String.valueOf(mainList.indexOf(getItem())));
+
+            dragboard.setContent(content);
+            sourceList = mainList;
             event.consume();
         });
 
@@ -57,7 +63,7 @@ class Draggable extends ListCell<Plugins> {
         });
 
         setOnDragDropped(event -> {
-            if (getItem() == null) {
+            if (getItem() == null && sourceList == mainList) {
                 return;
             }
 
@@ -66,20 +72,23 @@ class Draggable extends ListCell<Plugins> {
 
             if (db.hasString()) {
                 ObservableList<Plugins> items = getListView().getItems();
-                int draggedIdx = items.indexOf(db.getString());
+                int draggedIdx = Integer.parseInt(db.getString());
                 int thisIdx = items.indexOf(getItem());
-
-                Plugins temp = mainList.get(draggedIdx);
-                mainList.set(draggedIdx, mainList.get(thisIdx));
-                mainList.set(draggedIdx, getItem());
-
-                items.set(thisIdx, temp);
-                //items.set(thisIdx, db.getString());
-
-                List<Plugins> itemscopy = new ArrayList(getListView().getItems());
-                getListView().getItems().setAll(itemscopy);
-
-                success = true;
+                if (sourceList == mainList) {
+                    Plugins temp = mainList.get(draggedIdx);
+                    mainList.set(draggedIdx, mainList.get(thisIdx));
+                    items.set(thisIdx, temp);
+                    List<Plugins> itemscopy = new ArrayList(getListView().getItems());
+                    getListView().getItems().setAll(itemscopy);
+                    success = true;
+                } else {
+                    Plugins temp = mainList.get(draggedIdx);
+                    mainList.set(draggedIdx, mainList.get(thisIdx));
+                    items.set(thisIdx, temp);
+                    List<Plugins> itemscopy = new ArrayList(getListView().getItems());
+                    getListView().getItems().setAll(itemscopy);
+                    success = true;
+                }
             }
             event.setDropCompleted(success);
 
