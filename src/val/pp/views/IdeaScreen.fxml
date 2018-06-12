@@ -41,7 +41,7 @@
       <TextField fx:id="tfName" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" />
       <DatePicker fx:id="datePicker" maxWidth="1.7976931348623157E308" GridPane.rowIndex="3" />
       <Button fx:id="btnSubmit" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setBtnSubmit" text="Submit" GridPane.rowIndex="4" />
-      <TextArea fx:id="taDesc" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+      <TextArea fx:id="taDesc" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

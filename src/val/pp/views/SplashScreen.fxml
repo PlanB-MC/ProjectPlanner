@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="val.pp.controller.SplashController">
+   <children>
+      <ImageView layoutX="230.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../resources/PlanB_Splash.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblOutput" layoutX="14.0" layoutY="275.0" text="Label" textFill="#b9b9b9" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

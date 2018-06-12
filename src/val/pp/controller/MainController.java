@@ -633,10 +633,10 @@ public class MainController implements Initializable {
             Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Plugin Information");
             Project selProject = listProjects.getSelectionModel().getSelectedItem();
             EventHandler<ActionEvent> event = event1 -> {
-                String name = pec.tfName.getText();
-                String desc = pec.taDesc.getText();
-                String ideaAuth = pec.tfAuthorIdea.getText();
-                String pluginAuth = pec.tfAuthorPlugin.getText();
+                String name = sanitize(pec.tfName.getText());
+                String desc = sanitize(pec.taDesc.getText());
+                String ideaAuth = sanitize(pec.tfAuthorIdea.getText());
+                String pluginAuth = sanitize(pec.tfAuthorPlugin.getText());
                 String ideaDate = "";
                 String pluginDate = "";
                 try {
@@ -650,7 +650,7 @@ public class MainController implements Initializable {
                     //ignore
                 }
                 int cbEnabled = pec.cbEnabled.isSelected() ? 1 : 0;
-                String req = pec.taRequirements.getText();
+                String req = sanitize(pec.taRequirements.getText());
                 //<editor-fold desc="ErrorCheck">
                 int state = 0;
                 if (name.equals("") || desc.equals("") || ideaAuth.equals("") || ideaDate.equals("")) {
@@ -741,12 +741,12 @@ public class MainController implements Initializable {
             pec.tfAuthorIdea.setEditable(false);
             pec.ideaDatePicker.setEditable(false);
             EventHandler<ActionEvent> event = event1 -> {
-                String name = pec.tfName.getText();
-                String desc = pec.taDesc.getText();
-                String ideaAuth = pec.tfAuthorIdea.getText();//2018-06-01 08:24:40
-                String pluginAuth = pec.tfAuthorPlugin.getText();
+                String name = sanitize(pec.tfName.getText());
+                String desc = sanitize(pec.taDesc.getText());
+                String ideaAuth = sanitize(pec.tfAuthorIdea.getText());//2018-06-01 08:24:40
+                String pluginAuth = sanitize(pec.tfAuthorPlugin.getText());
                 int cbEnabled = pec.cbEnabled.isSelected() ? 1 : 0;
-                String req = pec.taRequirements.getText();
+                String req = sanitize(pec.taRequirements.getText());
                 String ideaDate = "";
                 String pluginDate = "";
                 try {
@@ -872,10 +872,10 @@ public class MainController implements Initializable {
             ProjectEditerController pec = loader.getController();
             Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Project Information");
             EventHandler<ActionEvent> event = event1 -> {
-                String name = pec.tfName.getText();
-                String owner = pec.tfOwner.getText();
-                String server = pec.tfServer.getText();
-                String desc = pec.taDesc.getText();
+                String name = sanitize(pec.tfName.getText());
+                String owner = sanitize(pec.tfOwner.getText());
+                String server = sanitize(pec.tfServer.getText());
+                String desc = sanitize(pec.taDesc.getText());
                 //<editor-fold desc="ErrorCheck">
                 if (name.equals("") || owner.equals("") || server.equals("") || desc.equals("")) {
                     msgDlgController.showError("Adding new Project Exception: Basic information", "Illegal Empty fields");
@@ -919,10 +919,10 @@ public class MainController implements Initializable {
             pec.tfServer.setText(curProj.getpServer());
             pec.taDesc.setText(curProj.getDesc());
             EventHandler<ActionEvent> event = event1 -> {
-                String name = pec.tfName.getText();
-                String owner = pec.tfOwner.getText();
-                String server = pec.tfServer.getText();
-                String desc = pec.taDesc.getText();
+                String name = sanitize(pec.tfName.getText());
+                String owner = sanitize(pec.tfOwner.getText());
+                String server = sanitize(pec.tfServer.getText());
+                String desc = sanitize(pec.taDesc.getText());
                 //<editor-fold desc="ErrorCheck">
                 if (name.equals("") || owner.equals("") || server.equals("") || desc.equals("")) {
                     msgDlgController.showError("Adding new Project Exception: Basic information", "Illegal Empty fields");
@@ -990,8 +990,8 @@ public class MainController implements Initializable {
             Stage newStage = App.initStageQuick(App.primaryStage, newScreen, "Idea Information");
             Project curProj = listProjects.getSelectionModel().getSelectedItem();
             EventHandler<ActionEvent> event = event1 -> {
-                String name = ic.tfName.getText();
-                String desc = ic.taDesc.getText();
+                String name = sanitize(ic.tfName.getText());
+                String desc = sanitize(ic.taDesc.getText());
                 String ideaDate;
                 try {
                     ideaDate = ic.datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -1049,8 +1049,8 @@ public class MainController implements Initializable {
             ic.taDesc.setText(curIdea.getDesc());
             ic.datePicker.setValue(LocalDate.parse(curIdea.getIdeaDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
             EventHandler<ActionEvent> event = event1 -> {
-                String name = ic.tfName.getText();
-                String desc = ic.taDesc.getText();
+                String name = sanitize(ic.tfName.getText());
+                String desc = sanitize(ic.taDesc.getText());
                 String ideaDate;
                 try {
                     ideaDate = ic.datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -1117,8 +1117,25 @@ public class MainController implements Initializable {
     }
     //</editor-fold>
 
-    public void swopScreens(ActionEvent actionEvent){
+    public void swopScreens(ActionEvent actionEvent) {
         App.toggleScreen();
+    }
+
+    private String sanitize(String fiflthy) {
+
+        return fiflthy
+                .replace("\0", "\\\"")//Null
+                .replace("\b", "\\\b")//backspace, unlikely
+                .replace("\t", "\\\t")//tab
+                //.replace("\Z", "\\\"")//undo, unlikely
+                .replace("\\", "\\")//backslash
+                .replace("\"", "\\\"")//double quote
+                .replace("\'", "\\\'")//single quote
+                .replace("\n", "\\\n")//newline
+                .replace("\r", "\\\r")//carriage
+                //.replace("\%", "\\\"")
+                //.replace("\_", "\\\"")
+                ;
     }
 
 
