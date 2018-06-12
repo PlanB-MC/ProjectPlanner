@@ -115,15 +115,15 @@ public class DragListenerHook {
             int indexSource = switch_on_ListViewID(((Draggable) event.getGestureSource()).getListView().getId());
             if ((indexCur - 6) < 0) {
                 if ((indexSource - 6) >= 0) {
-                    msgDlgController.showError("DND Exception!","You cannot do that...");
+                    msgDlgController.showError("DragNDrop Exception!","You cannot do that...");
                     return true;
                 }
-            } else if ((indexSource - 6) <= 0) {
-                msgDlgController.showError("DND Exception!","You cannot do that...");
+            } else if ((indexSource - 6) < 0) {
+                msgDlgController.showError("DragNDrop Exception!","You cannot do that...");
                 return true;
             }
         } catch (IllegalArgumentException e) {
-            msgDlgController.showError("DND Exception!","You cannot do that...");
+            msgDlgController.showError("DragNDrop Exception!","You cannot do that...");
             e.printStackTrace();
             return true;
         }

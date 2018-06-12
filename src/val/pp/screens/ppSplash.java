@@ -3,7 +3,7 @@ package val.pp.screens;
 import javafx.application.Preloader;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -22,7 +22,7 @@ public class ppSplash extends Preloader {
 
     public Scene createScene() {
         ImageView splash = new ImageView("/val/pp/resources/PlanB_Splash.jpg");
-        Scene scene = new Scene(new Pane(splash), 789, 306);
+        Scene scene = new Scene(new StackPane(splash), 789, 306);
         return scene;
     }
 
@@ -30,4 +30,5 @@ public class ppSplash extends Preloader {
     public void handleStateChangeNotification(StateChangeNotification stateChangeNotification) {
         //ignore
     }
+
 }

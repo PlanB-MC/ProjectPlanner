@@ -10,10 +10,15 @@ import javafx.stage.StageStyle;
 import val.pp.controller.dbController;
 import val.pp.controller.msgDlgController;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Scanner;
 
 public class App extends Application {
     public static Stage primaryStage;
+    private static String screenName;
 
     public static Stage initStageQuick(Stage owner, Parent screen, String title) {
         Stage stage = new Stage();
@@ -25,16 +30,55 @@ public class App extends Application {
         return stage;
     }
 
+    public static void toggleScreen() {
+        //new File("/val/pp/views/MainScreen.fxml")
+        //MainScreen
+        //Matts_Screen
+        if (screenName.equals("MainScreen")) screenName = "Matts_Screen";
+        else if (screenName.equals("Matts_Screen")) screenName = "MainScreen";
+        try {
+            System.out.println("val/pp/views/" + screenName + ".fxml");
+            Parent screen_HomeScreen = FXMLLoader.load(App.class.getResource("/val/pp/views/" + screenName + ".fxml"));
+            primaryStage.setScene(new Scene(screen_HomeScreen));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         dbController dbConn = new dbController("", "");
-        Parent screen_HomeScreen = FXMLLoader.load(getClass().getResource("/val/pp/views/MainScreen.fxml"));
+        Parent screen_HomeScreen = FXMLLoader.load(getClass().getResource("/val/pp/views/" + loadScreen() + ".fxml"));
         this.primaryStage = primaryStage;
         primaryStage.setScene(new Scene(screen_HomeScreen));
         primaryStage.setTitle("Project Planner");
         initPopups();
         primaryStage.show();
         ppSplash.splashScreen.hide();
+    }
+
+    private void setupMainScreen() throws Exception {
+
+    }
+
+    private String loadScreen() {
+        try {
+            InputStream is = getClass().getResourceAsStream("/val/pp/resources/config.txt");
+            Scanner scanner = new Scanner(is);
+            //String line = scanner.nextLine();
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                if (line.charAt(0) == '#') continue;
+                is.close();
+                screenName = line;
+                return line;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+        System.exit(-1);
+        return "";
     }
 
     private void initPopups() {

@@ -46,6 +46,7 @@ public class MainController implements Initializable {
     public Button btnDelProj;
     public Button btnAddIdea;
     public Button btnEditIdea;
+    public Button btnDelIdea;
     public Button btnAddPlugin;
     public Button btnEditPlugin;
     public Button btnDelPlugin;
@@ -648,7 +649,7 @@ public class MainController implements Initializable {
                 } catch (NullPointerException e) {
                     //ignore
                 }
-                Boolean cbEnabled = pec.cbEnabled.isSelected();
+                int cbEnabled = pec.cbEnabled.isSelected() ? 1 : 0;
                 String req = pec.taRequirements.getText();
                 //<editor-fold desc="ErrorCheck">
                 int state = 0;
@@ -657,7 +658,7 @@ public class MainController implements Initializable {
                     actionEvent.consume();
                     return;
                 }
-                if (!req.equals("") || cbEnabled) {
+                if (!req.equals("") || cbEnabled == 1) {
                     state = 1;
                 }
                 if (!pluginAuth.equals("") || !pluginDate.equals("")) {
@@ -694,7 +695,7 @@ public class MainController implements Initializable {
                     int id = resultSet.getInt("pId");
                     sql = "INSERT INTO ProjectPlugins (pluginID, projectID) VALUES ('" + id + "','" + selProject.getID() + "')";
                     dbController.execute(sql);
-                    Plugins newPlugin = new Plugins(name, desc, ideaAuth, ideaDate, cbEnabled, req, pluginAuth, pluginDate);
+                    Plugins newPlugin = new Plugins(name, desc, ideaAuth, ideaDate, cbEnabled == 1, req, pluginAuth, pluginDate);
                     newPlugin.setId(id);
                     obsListPurpose.add(newPlugin);
                     pec.done = true;
@@ -744,7 +745,7 @@ public class MainController implements Initializable {
                 String desc = pec.taDesc.getText();
                 String ideaAuth = pec.tfAuthorIdea.getText();//2018-06-01 08:24:40
                 String pluginAuth = pec.tfAuthorPlugin.getText();
-                Boolean cbEnabled = pec.cbEnabled.isSelected();
+                int cbEnabled = pec.cbEnabled.isSelected() ? 1 : 0;
                 String req = pec.taRequirements.getText();
                 String ideaDate = "";
                 String pluginDate = "";
@@ -765,7 +766,7 @@ public class MainController implements Initializable {
                     actionEvent.consume();
                     return;
                 }
-                if (!req.equals("") || cbEnabled) {
+                if (!req.equals("") || cbEnabled == 1) {
                     state = 1;
                 }
                 if (!pluginAuth.equals("") || !pluginDate.equals("null")) {
@@ -806,7 +807,7 @@ public class MainController implements Initializable {
                     curPlugin.setDescription(desc);
                     curPlugin.setIdeaAuthor(ideaAuth);
                     curPlugin.setDateIdea(ideaDate);
-                    curPlugin.setEnabledByDefault(cbEnabled);
+                    curPlugin.setEnabledByDefault(cbEnabled == 1);
                     curPlugin.setRequirements(req);
                     curPlugin.setPluginAuthor(pluginAuth);
                     curPlugin.setDatePlugin(pluginDate);
@@ -1115,6 +1116,11 @@ public class MainController implements Initializable {
         });
     }
     //</editor-fold>
+
+    public void swopScreens(ActionEvent actionEvent){
+        App.toggleScreen();
+    }
+
 
     //</editor-fold>
 }

@@ -15,8 +15,7 @@ public class dbController {
             return;
         }
         try {
-            System.out.println("\t\tLocate database to open (using connection string)...");
-
+            System.out.println("\t\tLocated database to open (using connection string)...");
             String connectionString = "jdbc:mysql://91.121.210.171:3306/s6_ProjectPlanner";
             System.out.println("\t\tConnection string = " + connectionString);
 
