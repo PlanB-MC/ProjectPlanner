@@ -1,9 +1,10 @@
 package val.pp.Model.ccBoxList;
 
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import val.pp.Model.Plugins;
@@ -13,7 +14,8 @@ import java.util.List;
 
 class Draggable extends ListCell<Plugins> {
     //private final String curString;
-    private static ObservableList<Plugins> sourceList;
+    private static ListView<Plugins> sourceListView;
+    private static int draggedIndex;
     private final ObservableList<Plugins> mainList;
 
     public Draggable(ObservableList<Plugins> mainList) {
@@ -35,7 +37,7 @@ class Draggable extends ListCell<Plugins> {
             content.putString(String.valueOf(mainList.indexOf(getItem())));
 
             dragboard.setContent(content);
-            sourceList = mainList;
+            sourceListView = getListView();
             event.consume();
         });
 
@@ -63,18 +65,19 @@ class Draggable extends ListCell<Plugins> {
         });
 
         setOnDragDropped(event -> {
-            if (getItem() == null && sourceList == mainList) {
+            if (getItem() == null && sourceListView.getItems() == mainList) {
                 return;
             }
 
             Dragboard db = event.getDragboard();
             boolean success = false;
+            draggedIndex = -1;
 
             if (db.hasString()) {
                 ObservableList<Plugins> items = getListView().getItems();
                 int draggedIdx = Integer.parseInt(db.getString());
-                int thisIdx = items.indexOf(getItem());
-                if (sourceList == mainList) {
+                if (sourceListView.getItems() == mainList) {
+                    int thisIdx = items.indexOf(getItem());
                     Plugins temp = mainList.get(draggedIdx);
                     mainList.set(draggedIdx, mainList.get(thisIdx));
                     items.set(thisIdx, temp);
@@ -82,11 +85,11 @@ class Draggable extends ListCell<Plugins> {
                     getListView().getItems().setAll(itemscopy);
                     success = true;
                 } else {
-                    Plugins temp = mainList.get(draggedIdx);
-                    mainList.set(draggedIdx, mainList.get(thisIdx));
-                    items.set(thisIdx, temp);
-                    List<Plugins> itemscopy = new ArrayList(getListView().getItems());
-                    getListView().getItems().setAll(itemscopy);
+                    Plugins curPlugin = sourceListView.getItems().get(draggedIdx);
+                    //mainList.add(curPlugin);
+                    sourceListView.getSelectionModel().select(-1);
+                    sourceListView.getItems().remove(draggedIdx);
+                    DragListenerHook.updateLists(curPlugin, mainList.get(0).getLevel());//Assumes size >= 1
                     success = true;
                 }
             }
@@ -95,16 +98,20 @@ class Draggable extends ListCell<Plugins> {
             event.consume();
         });
 
-        setOnDragDone(DragEvent::consume);
+        setOnDragDone(Event::consume);
     }
 
     @Override
     protected void updateItem(Plugins item, boolean empty) {
         super.updateItem(item, empty);
-        if (empty || item == null) {
+        /*if (empty || item == null) {
             setGraphic(null);
-        } else {
-            setText(item.getName());
-        }
+        } else {*/
+            if (item != null) {
+                setText(item.getName());
+            } else {
+                setText("");
+            }
+       // }
     }
 }

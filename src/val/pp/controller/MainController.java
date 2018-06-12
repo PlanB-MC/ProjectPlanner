@@ -51,7 +51,7 @@ public class MainController implements Initializable {
     public Button btnDelPlugin;
     public ChoiceBox<Plugins> choicePlugins;
     public ChoiceBox<Ideas> choiceIdeas;
-    private Pair<Integer, ListView> curList = new Pair<>(-1, null);
+    public Pair<Integer, ListView> curList = new Pair<>(-1, null);
     private ObservableList<Project> obsListProjects = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListReleased = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListFixes = FXCollections.observableArrayList(new ArrayList<>());
@@ -201,8 +201,17 @@ public class MainController implements Initializable {
     }
 
     private void setDragganles() {
-        DragListenerHook newHook1 = new DragListenerHook(listPurpose);
-        DragListenerHook newHook2 = new DragListenerHook(listFeas);
+        try {
+            DragListenerHook newHook = new DragListenerHook(
+                    this,
+                    getClass().getDeclaredMethod("switch_Level_on_Plugin", int.class, Plugins.class),
+                    getClass().getDeclaredMethod("saveToDB_ListsUpdated", Plugins.class)
+            );
+            newHook.hook(listPurpose, listFeas, listQue, listDev, listFixes, listReleased);
+        } catch (NoSuchMethodException e) {
+            System.out.println("Error doing move!");
+            e.printStackTrace();
+        }
     }
 
     private void setCur(ListView listReleased) {
@@ -436,6 +445,18 @@ public class MainController implements Initializable {
             return;
         }
         dbController.closeDB();
+    }
+
+    private void saveToDB_ListsUpdated(Plugins pSource) {
+        String sql = "";
+        try {
+            sql = "UPDATE Plugins SET pLevel = " + pSource.getLevel() + " WHERE pId = " + pSource.getId() + "";
+            dbController.execute(sql);
+            dbController.closeDB();
+        } catch (SQLException e) {
+            System.out.println("unable to do sql for: " + sql);
+            e.printStackTrace();
+        }
     }
 
     private void switch_Level_on_Plugin(int level, Plugins plugin) {
