@@ -205,9 +205,12 @@ public class MainController implements Initializable {
             DragListenerHook newHook = new DragListenerHook(
                     this,
                     getClass().getDeclaredMethod("switch_Level_on_Plugin", int.class, Plugins.class),
-                    getClass().getDeclaredMethod("saveToDB_ListsUpdated", Plugins.class)
+                    getClass().getDeclaredMethod("switch_Accepted_on_Idea", Ideas.class),
+                    getClass().getDeclaredMethod("saveToDB_ListsUpdated", Plugins.class),
+                    getClass().getDeclaredMethod("saveToDB_ListsUpdated", Ideas.class)
             );
             newHook.hook(listPurpose, listFeas, listQue, listDev, listFixes, listReleased);
+            newHook.hook(listIdeaA, listIdeaP);
         } catch (NoSuchMethodException e) {
             System.out.println("Error doing move!");
             e.printStackTrace();
@@ -434,8 +437,7 @@ public class MainController implements Initializable {
                 String ideaDate = resultset.getString("iIdeaDate");
                 Boolean accepted = Integer.valueOf(resultset.getString("iAccepted")) == 1;
                 Ideas newIdea = new Ideas(id, desc, author, ideaDate, accepted);
-                if (accepted) obsListIdeaA.add(newIdea);
-                else obsListIdeaP.add(newIdea);
+                switch_Accepted_on_Idea(newIdea);
             }
             listIdeaA.setItems(obsListIdeaA);
             listIdeaP.setItems(obsListIdeaP);
@@ -451,6 +453,18 @@ public class MainController implements Initializable {
         String sql = "";
         try {
             sql = "UPDATE Plugins SET pLevel = " + pSource.getLevel() + " WHERE pId = " + pSource.getId() + "";
+            dbController.execute(sql);
+            dbController.closeDB();
+        } catch (SQLException e) {
+            System.out.println("unable to do sql for: " + sql);
+            e.printStackTrace();
+        }
+    }
+
+    private void saveToDB_ListsUpdated(Ideas iSource) {
+        String sql = "";
+        try {
+            sql = "UPDATE Ideas SET iAccepted = " + iSource.isAccepted() + " WHERE iId = " + iSource.getId() + "";
             dbController.execute(sql);
             dbController.closeDB();
         } catch (SQLException e) {
@@ -494,6 +508,11 @@ public class MainController implements Initializable {
              * 5 - Released
              */
         }
+    }
+
+    private void switch_Accepted_on_Idea(Ideas curIdea) {
+        if (curIdea.isAccepted()) obsListIdeaA.add(curIdea);
+        else obsListIdeaP.add(curIdea);
     }
 
     private void populateChoicePlugins() {

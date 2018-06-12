@@ -9,7 +9,7 @@
     <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/Draggable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/Draggable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Model/ccBoxList/valBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" afterDir="false" />
@@ -73,11 +73,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+            <state relative-caret-position="-142">
+              <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
               <folding>
                 <element signature="e#3372#9102#0" />
                 <element signature="e#9289#9473#0" />
@@ -92,6 +92,7 @@
                 <element signature="e#22661#23778#0" />
                 <element signature="e#23784#24690#0" />
                 <element signature="e#24081#24682#0" />
+                <element signature="e#24717#24756#0" />
                 <element signature="e#24762#24791#0" />
                 <element signature="e#24762#29475#0" />
                 <element signature="e#29481#35835#0" />
@@ -109,20 +110,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DragListenerHook.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DragListenerHook.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="606">
+              <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plugins" pinned="false" current-in-tab="false">
-        <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Plugins">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="Draggable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="826">
+              <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,9 +206,9 @@
         <option value="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -300,6 +304,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Azure (Microsoft)&#10;DDL Data Source&#10;MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -416,7 +421,7 @@
       <workItem from="1528562033492" duration="5382000" />
       <workItem from="1528621552844" duration="39975000" />
       <workItem from="1528708442955" duration="39667000" />
-      <workItem from="1528788093078" duration="15464000" />
+      <workItem from="1528788093078" duration="21497000" />
     </task>
     <task id="LOCAL-00001" summary="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project">
       <created>1528659651523</created>
@@ -502,11 +507,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528752549533</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Draggable working to other lists. TODO iDEAS!">
+      <created>1528804001946</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1528804001946</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165425000" />
+    <option name="totallyTimeSpent" value="171458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -522,15 +534,14 @@
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" weight="0.20915033" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="12" type="WINDOWED" weight="0.38779956" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49782136" visible="true" weight="0.17377399" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.17377399" />
       <window_info anchor="right" id="Database" order="5" visible="true" weight="0.12846482" />
       <window_info anchor="right" id="SciView" order="6" weight="0.32995737" />
-      <window_info id="Structure" order="1" sideWeight="0.50217867" side_tool="true" visible="true" weight="0.17377399" />
+      <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" visible="true" weight="0.17377399" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -538,6 +549,7 @@
       <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39978212" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="12" type="WINDOWED" weight="0.38779956" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -567,19 +579,20 @@
     <MESSAGE value="Delete Plugin working.&#10;Changed name of messageDialog." />
     <MESSAGE value="Add/Edit/Del Ideas" />
     <MESSAGE value="Draggable working in same list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draggable working in same list" />
+    <MESSAGE value="Draggable working to other lists. TODO iDEAS!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draggable working to other lists. TODO iDEAS!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java</url>
-          <line>26</line>
+          <line>97</line>
           <properties />
-          <option name="timeStamp" value="105" />
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="106" />
+      <option name="time" value="109" />
     </breakpoint-manager>
   </component>
   <component name="XPathView.XPathProjectComponent">
@@ -611,7 +624,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/ppEvents.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -822,17 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -851,19 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,13 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
@@ -947,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="93" column="17" lean-forward="true" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -968,10 +939,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        <state relative-caret-position="880">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -982,10 +971,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7300">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
+        <state relative-caret-position="-142">
+          <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
           <folding>
             <element signature="e#3372#9102#0" />
             <element signature="e#9289#9473#0" />
@@ -1000,6 +996,7 @@
             <element signature="e#22661#23778#0" />
             <element signature="e#23784#24690#0" />
             <element signature="e#24081#24682#0" />
+            <element signature="e#24717#24756#0" />
             <element signature="e#24762#24791#0" />
             <element signature="e#24762#29475#0" />
             <element signature="e#29481#35835#0" />
@@ -1013,6 +1010,23 @@
             <element signature="e#45541#48358#0" />
             <element signature="e#48364#49855#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
         </state>
       </provider>
     </entry>
