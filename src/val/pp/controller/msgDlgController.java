@@ -18,12 +18,16 @@ public class msgDlgController implements Initializable {
     public Label lblHeader;
     public Label lblBody;
     public EventHandler<ActionEvent> event;
+    private static boolean isVisible = false;
+    private static boolean onQue = false;
 
     public static void showError(String header, String body) {
         thisCtrl.event = null;
         thisCtrl.btnCancel.setVisible(false);
         thisCtrl.lblHeader.setText(header);
         thisCtrl.lblBody.setText(body);
+        if (isVisible) onQue = true;
+        isVisible = true;
         stage.show();
     }
 
@@ -32,22 +36,37 @@ public class msgDlgController implements Initializable {
         thisCtrl.btnCancel.setVisible(true);
         thisCtrl.lblHeader.setText(header);
         thisCtrl.lblBody.setText(body);
+        if (isVisible) onQue = true;
+        isVisible = true;
         stage.show();
+        msgDlgController.runOnQue();
     }
 
     public void onbtnOK(ActionEvent event) {
         //Stage stage = (Stage) btnOK.getScene().getWindow();
         if (thisCtrl.event != null)
             thisCtrl.event.handle(event);
+        isVisible = false;
         stage.hide();
+        msgDlgController.runOnQue();
+    }
+
+    public static void runOnQue(){
+        if (onQue) {
+            stage.show();
+            onQue = false;
+        }
     }
 
     public void onbtnCancel(ActionEvent event) {
+        isVisible = true;
         stage.hide();
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
     }
 
 

@@ -4,15 +4,15 @@ import javafx.beans.property.*;
 
 public class Plugins {
     private IntegerProperty id = new SimpleIntegerProperty();
-    private StringProperty name = new SimpleStringProperty();
-    private StringProperty description = new SimpleStringProperty();
-    private StringProperty ideaAuthor = new SimpleStringProperty();
-    private StringProperty pluginAuthor = new SimpleStringProperty();
-    private StringProperty dateIdea = new SimpleStringProperty();
-    private StringProperty datePlugin = new SimpleStringProperty();
+    private StringProperty name = new SimpleStringProperty("");
+    private StringProperty description = new SimpleStringProperty("");
+    private StringProperty ideaAuthor = new SimpleStringProperty("");
+    private StringProperty pluginAuthor = new SimpleStringProperty("");
+    private StringProperty dateIdea = new SimpleStringProperty("");
+    private StringProperty datePlugin = new SimpleStringProperty("");
     private BooleanProperty enabledByDefault = new SimpleBooleanProperty();
-    private StringProperty requirements = new SimpleStringProperty();
-    private StringProperty todo = new SimpleStringProperty();
+    private StringProperty requirements = new SimpleStringProperty("");
+    private StringProperty todo = new SimpleStringProperty("");
     private IntegerProperty level = new SimpleIntegerProperty();
 
     public Plugins(String name, String description, String ideaAuthor, String dateIdea) {

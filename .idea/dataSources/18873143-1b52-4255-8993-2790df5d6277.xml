@@ -1322,10 +1322,9 @@
     </column>
     <column id="333" parent="326" name="iDesc">
       <Position>2</Position>
-      <DataType>varchar(300)|0s</DataType>
+      <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="334" parent="326" name="iIdeaAuthor">
       <Position>3</Position>
@@ -1376,10 +1375,9 @@
     </column>
     <column id="342" parent="327" name="pDesc">
       <Position>3</Position>
-      <DataType>varchar(300)|0s</DataType>
+      <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="343" parent="327" name="pIdeaAuthor">
       <Position>4</Position>
@@ -1413,7 +1411,7 @@
     </column>
     <column id="348" parent="327" name="pRequirements">
       <Position>9</Position>
-      <DataType>varchar(300)|0s</DataType>
+      <DataType>varchar(1000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="349" parent="327" name="pTODO">
@@ -1533,10 +1531,9 @@ projectID</ColNames>
     </column>
     <column id="368" parent="330" name="pDesc">
       <Position>3</Position>
-      <DataType>varchar(300)|0s</DataType>
+      <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
     <column id="369" parent="330" name="pServer">
       <Position>4</Position>

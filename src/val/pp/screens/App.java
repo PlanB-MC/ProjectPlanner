@@ -4,16 +4,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import val.pp.controller.dbController;
 import val.pp.controller.msgDlgController;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class App extends Application {
@@ -26,7 +26,7 @@ public class App extends Application {
         stage.setTitle(title);
         stage.initStyle(StageStyle.UTILITY);
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initOwner(owner);
+        stage.initOwner(owner == null ? primaryStage : owner);
         return stage;
     }
 
@@ -47,12 +47,20 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("/val/pp/resources/pblogo.png")));
         dbController dbConn = new dbController("", "");
-        Parent screen_HomeScreen = FXMLLoader.load(getClass().getResource("/val/pp/views/" + loadScreen() + ".fxml"));
         this.primaryStage = primaryStage;
+        initPopups();
+        System.setOut(new PrintStream(System.out) {
+            public void println(String s) {
+                msgDlgController.showError("This should not happen O__o", "SQL ERROR!");
+                super.println(s);
+            }
+            // override some other methods?
+        });
+        Parent screen_HomeScreen = FXMLLoader.load(getClass().getResource("/val/pp/views/" + loadScreen() + ".fxml"));
         primaryStage.setScene(new Scene(screen_HomeScreen));
         primaryStage.setTitle("Project Planner");
-        initPopups();
         primaryStage.show();
         ppSplash.splashScreen.hide();
     }

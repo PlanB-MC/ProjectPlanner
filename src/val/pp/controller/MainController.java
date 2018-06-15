@@ -1,5 +1,6 @@
 package val.pp.controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,10 +8,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import val.pp.Model.Ideas;
@@ -19,6 +17,7 @@ import val.pp.Model.Project;
 import val.pp.Model.ccBoxList.DragListenerHook;
 import val.pp.screens.App;
 
+import java.io.PrintStream;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,6 +51,7 @@ public class MainController implements Initializable {
     public Button btnDelPlugin;
     public ChoiceBox<Plugins> choicePlugins;
     public ChoiceBox<Ideas> choiceIdeas;
+    public Label lblTitle;
     public Pair<Integer, ListView> curList = new Pair<>(-1, null);
     private ObservableList<Project> obsListProjects = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Plugins> obsListReleased = FXCollections.observableArrayList(new ArrayList<>());
@@ -65,8 +65,16 @@ public class MainController implements Initializable {
     private ObservableList<Plugins> obsListChoicePlugins = FXCollections.observableArrayList(new ArrayList<>());
     private ObservableList<Ideas> getObsListChoiceIdeas = FXCollections.observableArrayList(new ArrayList<>());
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.setOut(new PrintStream(System.out) {
+            public void println(String s) {
+                msgDlgController.showError("This should not happen O__o", s);
+                super.println(s);
+            }
+            // override some other methods?
+        });
         initLoadFromDB();
         doBindings();
         refreshProjectList();
@@ -74,7 +82,9 @@ public class MainController implements Initializable {
         populateChoicePlugins();
         populateChoiceIdeas();
         setDragganles();
-        changeTXTinfo(null, listProjects.getSelectionModel().getSelectedItem());//Best solution i can find...
+        //Best solution i can find... Manual
+        changeTXTinfo(null, listProjects.getSelectionModel().getSelectedItem());
+        setTitle();
     }
 
     //<editor-fold desc="Bindings">
@@ -169,6 +179,7 @@ public class MainController implements Initializable {
             loadFromDB_PluginIdeas(listProjects.getSelectionModel().getSelectedItem().getID());
             populateChoicePlugins();
             populateChoiceIdeas();
+            setTitle();
         });
         //</editor-fold>
 
@@ -220,7 +231,7 @@ public class MainController implements Initializable {
 
     private void setCur(ListView listReleased) {
         curList = new Pair<>(listReleased.getSelectionModel().getSelectedIndex(), listReleased);
-        System.out.println(curList);
+        //System.out.println(curList);
     }
 
     //<editor-fold desc="update TextAreas">
@@ -241,8 +252,10 @@ public class MainController implements Initializable {
             txtPluginInfo.textProperty().unbind();
         }
         if (newValue != null) {
-            //System.out.println(newValue.descProperty());
-            txtPluginInfo.textProperty().bind(newValue.descProperty());
+            StringBuilder sb = new StringBuilder();
+            sb.append("Author: " + newValue.getAuthor());
+            sb.append("\n\nDescription: \n" + newValue.getDesc());
+            txtPluginInfo.textProperty().bind(new SimpleStringProperty(sb.toString()));
         }
     }
 
@@ -252,8 +265,16 @@ public class MainController implements Initializable {
             txtPluginInfo.textProperty().unbind();
         }
         if (newValue != null) {
-            //System.out.println(newValue.descProperty());
-            txtPluginInfo.textProperty().bind(newValue.nameProperty());
+            StringBuilder sb = new StringBuilder();
+            sb.append("Name: " + newValue.getName());
+            sb.append("\nWho's Idea: " + newValue.getIdeaAuthor());
+            if (newValue.getPluginAuthor() != "")
+                sb.append("\nDeveloper: " + newValue.getPluginAuthor());
+            sb.append("\n\nDescription: \n" + newValue.getDescription());
+            if (newValue.getRequirements() != "")
+                sb.append("\n\nRequirements: \n" + newValue.getRequirements());
+            System.out.println(newValue.getRequirements());
+            txtPluginInfo.textProperty().bind(new SimpleStringProperty(sb.toString()));
         }
     }
     //</editor-fold>
@@ -365,7 +386,7 @@ public class MainController implements Initializable {
             listProjects.setItems(obsListProjects);
             listProjects.getSelectionModel().selectFirst();
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
             return;
         }
@@ -422,7 +443,7 @@ public class MainController implements Initializable {
             listFixes.setItems(obsListFixes);
             listReleased.setItems(obsListReleased);
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
             return;
         }
@@ -443,7 +464,7 @@ public class MainController implements Initializable {
             listIdeaA.setItems(obsListIdeaA);
             listIdeaP.setItems(obsListIdeaP);
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
             return;
         }
@@ -457,7 +478,7 @@ public class MainController implements Initializable {
             dbController.execute(sql);
             dbController.closeDB();
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
         }
     }
@@ -469,7 +490,7 @@ public class MainController implements Initializable {
             dbController.execute(sql);
             dbController.closeDB();
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
         }
     }
@@ -553,7 +574,7 @@ public class MainController implements Initializable {
             }
             choicePlugins.setItems(obsListChoicePlugins);
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
             return;
         }
@@ -572,7 +593,7 @@ public class MainController implements Initializable {
                         switch_Level_on_Plugin(newValue.getLevel(), newValue);
                         dbController.closeDB();
                     } catch (SQLException e) {
-                        System.out.println("unable to do sql for: " + sql);
+                        System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                     }
                 });
     }
@@ -596,7 +617,7 @@ public class MainController implements Initializable {
             }
             choiceIdeas.setItems(getObsListChoiceIdeas);
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             e.printStackTrace();
             return;
         }
@@ -616,7 +637,7 @@ public class MainController implements Initializable {
                         else obsListIdeaP.add(newValue);
                         dbController.closeDB();
                     } catch (SQLException e) {
-                        System.out.println("unable to do sql for: " + sql);
+                        System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                     }
                 });
     }
@@ -701,7 +722,7 @@ public class MainController implements Initializable {
                     pec.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                     e.printStackTrace();
                 }
             };
@@ -815,7 +836,7 @@ public class MainController implements Initializable {
                     pec.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                     e.printStackTrace();
                 }
             };
@@ -852,13 +873,14 @@ public class MainController implements Initializable {
             try {
                 sql = "DELETE FROM ProjectPlugins WHERE pluginID = " + curPlugin.getId() + "";
                 dbController.execute(sql);
-                sql = "DELETE FROM Plugins WHERE pId = " + curPlugin.getId() + "";
-                dbController.execute(sql);
+                /*sql = "DELETE FROM Plugins WHERE pId = " + curPlugin.getId() + "";
+                dbController.execute(sql);*/
                 curListView.getSelectionModel().select(index);
+                choicePlugins.getItems().add(curPlugin);
                 curListView.getItems().remove(curPlugin);
                 dbController.closeDB();
             } catch (SQLException e) {
-                System.out.println("unable to do sql for: " + sql);
+                System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             }
         });
     }
@@ -885,7 +907,7 @@ public class MainController implements Initializable {
                 //</editor-fold>
                 String sql = "";
                 try {
-                    sql = "INSERT INTO Projects (pName,pDesc,pServer,pOwner) VALUES ('" + name + "','" + owner + "','" + server + "','" + desc + "')";
+                    sql = "INSERT INTO Projects (pName,pOwner,pDesc,pServer) VALUES ('" + name + "','" + owner + "','" + desc + "','" + server + "')";
                     dbController.execute(sql);
                     Project newProj = new Project(name, desc, server, owner);
                     sql = "SELECT * FROM Projects";
@@ -897,7 +919,7 @@ public class MainController implements Initializable {
                     dbController.closeDB();
                     pec.done = true;
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                 }
             };
             pec.fireEvent = event;
@@ -946,7 +968,7 @@ public class MainController implements Initializable {
                     dbController.closeDB();
                     pec.done = true;
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                 }
             };
             pec.fireEvent = event;
@@ -968,7 +990,7 @@ public class MainController implements Initializable {
         try {
             sql = "DELETE FROM ProjectPlugins WHERE projectID = " + curProj.getID() + "";
             dbController.execute(sql);
-            sql = "DELETE FROM ProjectIdeas WHERE projectID = " + curProj.getID() + "";
+            sql = "DELETE FROM ProjectIdea WHERE projectID = " + curProj.getID() + "";
             dbController.execute(sql);
             sql = "DELETE FROM Projects WHERE pId = " + listProjects.getSelectionModel().getSelectedItem().getID() + "";
             dbController.execute(sql);
@@ -976,7 +998,7 @@ public class MainController implements Initializable {
             listProjects.getItems().remove(curProj);
             dbController.closeDB();
         } catch (SQLException e) {
-            System.out.println("unable to do sql for: " + sql);
+            System.out.println(e.getCause() + "; unable to do sql for: " + sql);
         }
     }
     //</editor-fold>
@@ -1017,7 +1039,7 @@ public class MainController implements Initializable {
                     ic.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                 }
             };
             ic.fireEvent = event;
@@ -1074,7 +1096,7 @@ public class MainController implements Initializable {
                     ic.done = true;
                     dbController.closeDB();
                 } catch (SQLException e) {
-                    System.out.println("unable to do sql for: " + sql);
+                    System.out.println(e.getCause() + "; unable to do sql for: " + sql);
                 }
             };
             ic.fireEvent = event;
@@ -1105,13 +1127,14 @@ public class MainController implements Initializable {
             try {
                 sql = "DELETE FROM ProjectIdea WHERE projectID = " + curProjId + " AND ideaID = " + curIdea.getId() + "";
                 dbController.execute(sql);
-                sql = "DELETE FROM Ideas WHERE iId = " + curIdea.getId() + "";
-                dbController.execute(sql);
+                /*sql = "DELETE FROM Ideas WHERE iId = " + curIdea.getId() + "";
+                dbController.execute(sql);*/
                 curListView.getSelectionModel().select(-1);
+                choiceIdeas.getItems().add(curIdea);
                 curListView.getItems().remove(curIdea);
                 dbController.closeDB();
             } catch (SQLException e) {
-                System.out.println("unable to do sql for: " + sql);
+                System.out.println(e.getCause() + "; unable to do sql for: " + sql);
             }
         });
     }
@@ -1124,20 +1147,23 @@ public class MainController implements Initializable {
     private String sanitize(String fiflthy) {
 
         return fiflthy
-                .replace("\0", "\\\"")//Null
-                .replace("\b", "\\\b")//backspace, unlikely
-                .replace("\t", "\\\t")//tab
+                .replace("\0", "\\0")//Null
+                .replace("\b", "\\b")//backspace, unlikely
+                .replace("\t", "\\t")//tab
                 //.replace("\Z", "\\\"")//undo, unlikely
                 .replace("\\", "\\")//backslash
                 .replace("\"", "\\\"")//double quote
                 .replace("\'", "\\\'")//single quote
-                .replace("\n", "\\\n")//newline
-                .replace("\r", "\\\r")//carriage
+                .replace("\n", "\\n")//newline
+                .replace("\r", "\\r")//carriage
                 //.replace("\%", "\\\"")
                 //.replace("\_", "\\\"")
                 ;
     }
 
+    private void setTitle() {
+        lblTitle.setText(listProjects.getSelectionModel().getSelectedItem().getName());
+    }
 
     //</editor-fold>
 }

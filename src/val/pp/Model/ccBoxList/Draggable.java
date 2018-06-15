@@ -5,12 +5,10 @@ import javafx.event.Event;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import val.pp.Model.Ideas;
 import val.pp.Model.Plugins;
-import val.pp.controller.msgDlgController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +24,17 @@ class Draggable<G> extends ListCell<G> {
         ListCell thisCell = this;
 
         //setAlignment(Pos.CENTER);
+        /*if (getItem() instanceof Plugins)
+            setOnMouseClicked(event -> {
+                if (event.isSecondaryButtonDown()) {
+                    MenuItem todo = new MenuItem("Edit TODO");
+                    todo.setOnAction(event1 -> {
+                        Stage curStage = App.initStageQuick(null, new Pane(new TextArea()), getItem().toString() + " TODO");
+                        curStage.show();
+                    });
+                    ContextMenu cMenu = new ContextMenu();
+                }
+            });*/
 
         setOnDragDetected(event -> {
             if (getItem() == null) {
@@ -68,7 +77,7 @@ class Draggable<G> extends ListCell<G> {
         });
 
         setOnDragDropped(event -> {
-            if (DragListenerHook.IllegalDragAndDrop(getListView(),event)) return;
+            if (DragListenerHook.IllegalDragAndDrop(getListView(), event)) return;
 
            /* Class cur = mainList.get(0).getClass();
             Class source = sourceListView.getItems().get(0).getClass();

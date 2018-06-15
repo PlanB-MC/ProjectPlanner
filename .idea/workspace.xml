@@ -6,15 +6,27 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="Added additional Home Screen. Squashed some bugs">
-      <change afterPath="$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/val/pp/views/SplashScreen.fxml" afterDir="false" />
+    <list default="true" id="30a0c591-6984-42ba-bad7-303e5c84443f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/val/pp/controller/SplashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/18873143-1b52-4255-8993-2790df5d6277.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProjectPlanner_jar/ProjectPlanner.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/resources/PlanB_Splash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/PluginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectPlanner/val/pp/views/PluginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/resources/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/resources/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/controller/dbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/dbController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/resources/PlanB_Splash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/screens/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/screens/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/screens/ppSplash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/screens/ppSplash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/val/pp/views/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/val/pp/views/SplashScreen.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,6 +72,34 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="Ideas: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="Plugins: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="ProjectIdea: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="s6_ProjectPlanner@91.121.210.171" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="s6_ProjectPlanner: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="Projects: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -71,50 +111,60 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="1069" column="46" lean-forward="true" selection-start-line="1069" selection-start-column="46" selection-end-line="1069" selection-end-column="46" />
+            <state relative-caret-position="180">
+              <caret line="1140" column="20" lean-forward="true" selection-start-line="1140" selection-start-column="20" selection-end-line="1140" selection-end-column="20" />
               <folding>
-                <element signature="e#3372#3403#0" />
-                <element signature="e#3444#3474#0" />
-                <element signature="e#6553#6581#0" />
-                <element signature="e#7632#7663#0" />
-                <element signature="e#8772#8804#0" />
-                <element signature="e#9108#9283#0" />
-                <element signature="e#9289#9473#0" />
-                <element signature="e#9479#9518#0" />
-                <element signature="e#9479#9903#0" />
-                <element signature="e#9909#10280#0" />
-                <element signature="e#10286#10663#0" />
-                <element signature="e#10690#11098#0" />
-                <element signature="e#11104#14364#0" />
-                <element signature="e#14392#15539#0" />
-                <element signature="e#15545#18927#0" />
-                <element signature="e#19372#19799#0" />
-                <element signature="e#19817#20244#0" />
-                <element signature="e#18933#19852#0" />
-                <element signature="e#21172#21306#0" />
-                <element signature="e#19858#21785#0" />
-                <element signature="e#21791#22655#0" />
-                <element signature="e#22661#23778#0" />
-                <element signature="e#23784#24690#0" />
-                <element signature="e#24081#24682#0" />
-                <element signature="e#24762#29475#0" />
-                <element signature="e#29481#35835#0" />
-                <element signature="e#35841#37604#0" />
-                <element signature="e#51674#51774#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3779#3809#0" />
+                <element signature="e#6888#6916#0" />
+                <element signature="e#7967#7998#0" />
+                <element signature="e#8142#8404#0" />
+                <element signature="e#8441#8475#0" />
+                <element signature="e#9107#9139#0" />
+                <element signature="e#9443#10244#0" />
+                <element signature="e#10250#10434#0" />
+                <element signature="e#10440#10864#0" />
+                <element signature="e#10870#11241#0" />
+                <element signature="e#11247#11624#0" />
+                <element signature="e#11651#12059#0" />
+                <element signature="e#12065#15325#0" />
+                <element signature="e#15353#15390#0" />
+                <element signature="e#15353#16500#0" />
+                <element signature="e#16506#19833#0" />
+                <element signature="e#19839#20266#0" />
+                <element signature="e#20272#20700#0" />
+                <element signature="e#20706#21625#0" />
+                <element signature="e#21631#21791#0" />
+                <element signature="e#21797#23724#0" />
+                <element signature="e#23730#24594#0" />
+                <element signature="e#24600#25717#0" />
+                <element signature="e#25723#26629#0" />
+                <element signature="e#26701#26730#0" />
+                <element signature="e#26701#31478#0" />
+                <element signature="e#27253#31332#0" />
+                <element signature="e#31484#37902#0" />
+                <element signature="e#37908#39732#0" />
+                <element signature="e#39759#39789#0" />
+                <element signature="e#39759#41899#0" />
+                <element signature="e#41905#44296#0" />
+                <element signature="e#44302#45468#0" />
+                <element signature="e#45495#45522#0" />
+                <element signature="e#45495#47763#0" />
+                <element signature="e#47769#50606#0" />
+                <element signature="e#50612#52160#0" />
+                <element signature="e#52277#52905#0" />
+                <element signature="e#52838#52839#0" expanded="true" />
+                <element signature="e#52861#52862#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdeaController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/val/pp/controller/IdeaController.java">
+      <file leaf-file-name="Plugins.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -144,6 +194,10 @@
       <find>populateChoicePlugins</find>
       <find>addPluginToProject</find>
       <find>addIdeaToProject</find>
+      <find>unable to do sql for:</find>
+      <find>ProjectIdea</find>
+      <find>unable to do sql for: &quot; + sql</find>
+      <find>Title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +226,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_2.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_3.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_4.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/ppEvents.java" />
         <option value="$PROJECT_DIR$/src/val/pp/preload/ppSplash.java" />
@@ -181,8 +234,6 @@
         <option value="$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_6.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/screens/messageDialog.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/Main.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/PluginEditorController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_7.sql" />
         <option value="$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml" />
@@ -191,14 +242,21 @@
         <option value="$PROJECT_DIR$/src/val/pp/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_8.sql" />
-        <option value="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/controller/SplashController.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/screens/ppSplash.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/controller/dbController.java" />
         <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java" />
-        <option value="$PROJECT_DIR$/src/val/pp/screens/App.java" />
         <option value="$PROJECT_DIR$/src/val/pp/resources/config.txt" />
+        <option value="$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/screens/ppSplash.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_9.sql" />
+        <option value="$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/val/pp/views/SplashScreen.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_10.sql" />
+        <option value="$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml" />
+        <option value="$PROJECT_DIR$/src/val/pp/controller/SplashController.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/screens/App.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/controller/dbController.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/Main.java" />
+        <option value="$PROJECT_DIR$/src/val/pp/Model/Plugins.java" />
         <option value="$PROJECT_DIR$/src/val/pp/controller/MainController.java" />
       </list>
     </option>
@@ -212,9 +270,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="18" />
-    <option name="y" value="-18" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1" />
+    <option name="y" value="-22" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -223,7 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -295,9 +352,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="projectplanner" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Azure (Microsoft)&#10;DDL Data Source&#10;MySQL" />
@@ -306,10 +369,10 @@
     <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.14689709" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -419,7 +482,9 @@
       <workItem from="1528562033492" duration="5382000" />
       <workItem from="1528621552844" duration="39975000" />
       <workItem from="1528708442955" duration="39667000" />
-      <workItem from="1528788093078" duration="40447000" />
+      <workItem from="1528788093078" duration="42123000" />
+      <workItem from="1528923599800" duration="3558000" />
+      <workItem from="1529075048148" duration="14498000" />
     </task>
     <task id="LOCAL-00001" summary="Working Main Screen.&#10;SQL functions Added&#10;Added Splash screen.&#10;possible to add new project">
       <created>1528659651523</created>
@@ -526,46 +591,53 @@
       <option name="project" value="LOCAL" />
       <updated>1528825976813</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added sql sanity tests">
+      <created>1528832452486</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1528832452486</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190408000" />
+    <option name="totallyTimeSpent" value="210140000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32897604" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.15618336" />
-      <window_info id="Structure" order="1" sideWeight="0.5032467" side_tool="true" weight="0.17377399" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39978212" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" visible="true" weight="0.20915033" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Run" order="2" type="WINDOWED" weight="0.20915033" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49675325" visible="true" weight="0.17377399" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="12" type="WINDOWED" weight="0.38779956" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49675325" visible="true" weight="0.17697228" />
+      <window_info anchor="right" id="Database" order="5" weight="0.19029851" />
       <window_info anchor="right" id="SciView" order="6" weight="0.32995737" />
+      <window_info id="Structure" order="1" sideWeight="0.5032467" side_tool="true" weight="0.17377399" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="4" sideWeight="0.50082916" side_tool="true" weight="0.16471216" />
+      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Debug" order="3" type="WINDOWED" weight="0.39978212" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" x="1920" y="203" width="1600" height="837" id="Database Console" order="12" type="WINDOWED" weight="0.38779956" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,25 +666,12 @@
     <MESSAGE value="Draggable working to other lists. TODO iDEAS!" />
     <MESSAGE value="Home screen mostly done. needs clearer use cases" />
     <MESSAGE value="Added additional Home Screen. Squashed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added additional Home Screen. Squashed some bugs" />
+    <MESSAGE value="added sql sanity tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sql sanity tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/val/pp/controller/MainController.java</url>
-          <line>993</line>
-          <properties />
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="124" />
+      <option name="time" value="129" />
     </breakpoint-manager>
   </component>
   <component name="XPathView.XPathProjectComponent">
@@ -644,50 +703,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_3.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="69" selection-start-column="69" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_CONFIG_DIR$/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar!/com/mysql/jdbc/UpdatableResultSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="706" selection-start-line="706" selection-end-line="706" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="1772" selection-start-line="1772" selection-end-line="1772" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/screens/messageDialog.java" />
-    <entry file="file://$PROJECT_DIR$/src/val/pp/views/PluginScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/ProjectIdea">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/time/LocalDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="467" column="12" selection-start-line="467" selection-start-column="12" selection-end-line="467" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/Locale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16888">
@@ -699,10 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29524">
           <caret line="1591" column="21" selection-start-line="1591" selection-start-column="21" selection-end-line="1591" selection-end-column="21" />
-          <folding>
-            <element signature="e#99375#99376#0" expanded="true" />
-            <element signature="e#99452#99453#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,31 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/ProjectPlugins">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/views/messageDialog.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_7.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -753,20 +739,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/views/IdeaScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/ProjectEditerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,31 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Plugins">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7300">
@@ -889,54 +847,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="103" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="e#2583#2584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/SplashController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/views/MainScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
           <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/screens/ppSplash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#handleStateChangeNotification#0;class#ppSplash#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,13 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/dbController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -965,23 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="3161" selection-start-line="3161" selection-end-line="3161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2618">
-          <caret line="128" column="9" lean-forward="true" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,21 +904,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+    <entry file="file://$PROJECT_DIR$/src/val/pp/views/messageDialog.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/screens/App.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_9.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state>
+          <caret column="89" selection-start-column="89" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/views/SplashScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/Plugins">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/ProjectIdea">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://18873143-1b52-4255-8993-2790df5d6277/schema/s6_ProjectPlanner/table/ProjectPlugins">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/msgDlgController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/IdeaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1031,49 +972,170 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/IdeaController.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/18873143-1b52-4255-8993-2790df5d6277/console_10.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state>
+          <caret column="593" selection-start-column="593" selection-end-column="593" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+          <folding>
+            <element signature="e#2871#2872#0" expanded="true" />
+            <element signature="e#2896#2897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/views/ProjectScreen.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="e#1186#1187#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/views/Matts_Screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="77" column="169" lean-forward="true" selection-start-line="77" selection-start-column="169" selection-end-line="77" selection-end-column="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/DragListenerHook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1640">
+          <caret line="111" column="12" lean-forward="true" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/screens/ppSplash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#handleStateChangeNotification#0;class#ppSplash#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Ideas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/ccBoxList/Draggable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/screens/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/SplashController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/controller/dbController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/val/pp/Model/Plugins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/val/pp/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="1069" column="46" lean-forward="true" selection-start-line="1069" selection-start-column="46" selection-end-line="1069" selection-end-column="46" />
+        <state relative-caret-position="180">
+          <caret line="1140" column="20" lean-forward="true" selection-start-line="1140" selection-start-column="20" selection-end-line="1140" selection-end-column="20" />
           <folding>
-            <element signature="e#3372#3403#0" />
-            <element signature="e#3444#3474#0" />
-            <element signature="e#6553#6581#0" />
-            <element signature="e#7632#7663#0" />
-            <element signature="e#8772#8804#0" />
-            <element signature="e#9108#9283#0" />
-            <element signature="e#9289#9473#0" />
-            <element signature="e#9479#9518#0" />
-            <element signature="e#9479#9903#0" />
-            <element signature="e#9909#10280#0" />
-            <element signature="e#10286#10663#0" />
-            <element signature="e#10690#11098#0" />
-            <element signature="e#11104#14364#0" />
-            <element signature="e#14392#15539#0" />
-            <element signature="e#15545#18927#0" />
-            <element signature="e#19372#19799#0" />
-            <element signature="e#19817#20244#0" />
-            <element signature="e#18933#19852#0" />
-            <element signature="e#21172#21306#0" />
-            <element signature="e#19858#21785#0" />
-            <element signature="e#21791#22655#0" />
-            <element signature="e#22661#23778#0" />
-            <element signature="e#23784#24690#0" />
-            <element signature="e#24081#24682#0" />
-            <element signature="e#24762#29475#0" />
-            <element signature="e#29481#35835#0" />
-            <element signature="e#35841#37604#0" />
-            <element signature="e#51674#51774#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3779#3809#0" />
+            <element signature="e#6888#6916#0" />
+            <element signature="e#7967#7998#0" />
+            <element signature="e#8142#8404#0" />
+            <element signature="e#8441#8475#0" />
+            <element signature="e#9107#9139#0" />
+            <element signature="e#9443#10244#0" />
+            <element signature="e#10250#10434#0" />
+            <element signature="e#10440#10864#0" />
+            <element signature="e#10870#11241#0" />
+            <element signature="e#11247#11624#0" />
+            <element signature="e#11651#12059#0" />
+            <element signature="e#12065#15325#0" />
+            <element signature="e#15353#15390#0" />
+            <element signature="e#15353#16500#0" />
+            <element signature="e#16506#19833#0" />
+            <element signature="e#19839#20266#0" />
+            <element signature="e#20272#20700#0" />
+            <element signature="e#20706#21625#0" />
+            <element signature="e#21631#21791#0" />
+            <element signature="e#21797#23724#0" />
+            <element signature="e#23730#24594#0" />
+            <element signature="e#24600#25717#0" />
+            <element signature="e#25723#26629#0" />
+            <element signature="e#26701#26730#0" />
+            <element signature="e#26701#31478#0" />
+            <element signature="e#27253#31332#0" />
+            <element signature="e#31484#37902#0" />
+            <element signature="e#37908#39732#0" />
+            <element signature="e#39759#39789#0" />
+            <element signature="e#39759#41899#0" />
+            <element signature="e#41905#44296#0" />
+            <element signature="e#44302#45468#0" />
+            <element signature="e#45495#45522#0" />
+            <element signature="e#45495#47763#0" />
+            <element signature="e#47769#50606#0" />
+            <element signature="e#50612#52160#0" />
+            <element signature="e#52277#52905#0" />
+            <element signature="e#52838#52839#0" expanded="true" />
+            <element signature="e#52861#52862#0" expanded="true" />
           </folding>
         </state>
       </provider>
